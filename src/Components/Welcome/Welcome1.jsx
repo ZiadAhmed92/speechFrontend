@@ -1,0 +1,21 @@
+import { Link } from "react-router-dom"
+import logo1 from "../../image/logo1.png"
+import "./Welcome.css"
+const Welcome1 = () => {
+    return (
+        <div className="welcome1">
+            <div className="text-center">
+                <img src={logo1} className="logo1" />
+            </div>
+            <div className="paragraph-welcome1 w-75 m-auto">
+                <h2>Welcome to SER,</h2>
+                <h6>SER is the abbreviation of <span className="sub-title">Speech Emotion Recognition</span>, which is the act of attempting to recognize human emotion and affective states from speech.</h6>
+            </div>
+            <div className="w-75 text-center">
+              <Link to="/welcome2">  <button className="btn-welcome1">Next</button></Link>
+            </div>
+        </div>
+    )
+}
+
+export default Welcome1

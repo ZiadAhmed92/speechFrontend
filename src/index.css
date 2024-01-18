@@ -1,0 +1,19 @@
+body{
+  background-color: var(--body);
+}
+:root{
+  --body:#EEE;
+  --text:black;
+  --secondary:black;
+  --title:black;
+  --subTitle:rgb(161 161 170);
+
+}
+.dark{
+    --body:black;
+    --text:#F3D2F2;
+  --primary:red;
+  --secondary:black;
+  --title:black;
+  --subTitle:rgb(161 161 170);
+}
