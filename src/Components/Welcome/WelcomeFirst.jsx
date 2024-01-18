@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import logo1 from "../../image/logo1.png"
 import "./Welcome.css"
-const Welcome1 = () => {
+const WelcomeFirst = () => {
     return (
         <div className="welcome1">
             <div className="text-center">
@@ -18,4 +18,4 @@ const Welcome1 = () => {
     )
 }
 
-export default Welcome1
+export default WelcomeFirst

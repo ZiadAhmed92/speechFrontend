@@ -1,6 +1,6 @@
 import logo3 from "../../image/logo3.png"
 import "./Welcome.css"
-const Welcome3 = () => {
+const WelcomeThird = () => {
   return (
       <div className="welcome1">
           <div className="text-center">
@@ -17,4 +17,4 @@ const Welcome3 = () => {
   )
 }
 
-export default Welcome3
+export default WelcomeThird
