@@ -13,7 +13,7 @@ const WelcomeSecond = () => {
               <h6 className="text-wel2"> It shows the result in the form of emojis that describe your feelings.</h6>
           </div>
           <div className="w-75 text-center">
-              <Link to="/welcome3">   <button className="btn-welcome1">Next</button></Link>
+              <Link to="/welcomethird">   <button className="btn-welcome1">Next</button></Link>
           </div>
       </div>
   )

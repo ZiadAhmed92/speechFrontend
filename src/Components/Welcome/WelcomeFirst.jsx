@@ -12,7 +12,7 @@ const WelcomeFirst = () => {
                 <h6>SER is the abbreviation of <span className="sub-title">Speech Emotion Recognition</span>, which is the act of attempting to recognize human emotion and affective states from speech.</h6>
             </div>
             <div className="w-75 text-center">
-              <Link to="/welcome2">  <button className="btn-welcome1">Next</button></Link>
+                <Link to="/welcomesecond">  <button className="btn-welcome1">Next</button></Link>
             </div>
         </div>
     )

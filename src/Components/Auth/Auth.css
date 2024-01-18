@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,300;1,900&family=La+Belle+Aurore&family=Leckerli+One&family=Scheherazade+New:wght@400;700&display=swap');
+
+/* login */
+.text-login {
+    color: var(--text);
+}
+
+.row-login {
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.login {
+    color: #8C85C8;
+    font-family: Adamina;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    line-height: 110%;
+
+}
+
+::placeholder {
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.635);
+}
+
+.input {
+    flex-direction: column;
+}
+
+.email,
+.password {
+    width: 90%;
+    border: none;
+    margin: auto;
+    height: 67px;
+    text-indent: 25px;
+    background: #A09A9A;
+}
+
+.email {
+    border-radius: 50px 50px 0px 0px;
+    -webkit-border-radius: 50px 50px 0px 0px;
+    -moz-border-radius: 50px 50px 0px 0px;
+    -ms-border-radius: 50px 50px 0px 0px;
+    -o-border-radius: 50px 50px 0px 0px;
+}
+
+.password {
+    border-radius: 0px 0px 50px 50px;
+    -webkit-border-radius: 0px 0px 50px 50px;
+    -moz-border-radius: 0px 0px 50px 50px;
+    -ms-border-radius: 0px 0px 50px 50px;
+    -o-border-radius: 0px 0px 50px 50px;
+}
+
+.ForgetPassword {
+    cursor: pointer;
+}
+
+.btn-login {
+    color: #FFF;
+    text-align: center;
+    font-family: Adamina;
+    border: none;
+    font-size: 20px;
+    width: 150px;
+    padding: 10px;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 50px 50px 0px 0px;
+    background: #F3A5D4;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.35);
+}
+
+.line {
+    width: 30%;
+    height: 1px;
+    background: var(--text);
+}
+
+.logo-login {
+    width: 50px;
+}
+
+@media only screen and (max-width: 769px) {
+    .row-login {
+        flex-direction: column-reverse !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .or {
+        margin-left: 5px !important;
+    }
+
+    .login {
+        font-size: 30px;
+    }
+
+    .ForgetPassword {
+        font-size: 1.2em !important;
+    }
+}
+
+/* Register */
+.register {
+    height: 100vh;
+
+}
+
+.text-signUp {
+    color: #8C85C8;
+    font-family: "La Belle Aurore";
+    font-size: 50px;
+    font-weight: 400;
+    /* 77px */
+}
+
+.logo2 {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 140px;
+    height: 130px;
+    flex-shrink: 0;
+}
+
+.logo3 {
+    width: 50px;
+}
+
+.firstName {
+    border-radius: 25px 0px 0px 0px;
+    width: 47%;
+}
+
+.lastName {
+    border-radius: 0px 25px 0px 0px;
+    width: 47%;
+}
+
+.input-signup {
+    background: rgb(217, 217, 217);
+    border: none;
+    padding: 10px;
+    width: 100%;
+  
+
+}
+
+.firstName,
+.lastName {
+    border: none;
+    margin: auto;
+    padding: 15px;
+    text-indent: 25px;
+    background: rgb(217, 217, 217);
+}
+
+.text-signup {
+    color: var(--text);
+}
+
+.btn-signUp {
+    background: #8C85C8 !important;
+    margin: 10px 0;
+}
+@media only screen and (max-width: 769px) {
+    .logo-signup{
+        display: none;
+    }
+    .text-signUp{
+        font-size: 40px;
+        text-align: center;
+    }
+}

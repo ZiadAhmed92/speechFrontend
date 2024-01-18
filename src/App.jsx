@@ -4,8 +4,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'
 // import '@fortawesome/fontawesome-free/css/all.min.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import WelcomeThird from './Components/Welcome/WelcomeThird'
-import WelcomeFirst from './Components/Welcome/WelcomeFirst.jsx'
-import WelcomeSecond from './Components/Welcome/WelcomeSecond.jsx'
+import WelcomeFirst from './Components/Welcome/WelcomeFirst'
+import WelcomeSecond from './Components/Welcome/WelcomeSecond'
+import Login from './Components/Auth/Login'
+import Register from './Components/Auth/Register'
 function App() {
  
   const router = createBrowserRouter([
@@ -14,12 +16,20 @@ function App() {
       element: <WelcomeFirst/>
     },
     {
-      path: "/welcome2",
+      path: "/welcomesecond",
       element: <WelcomeSecond />,
     },
     {
-      path: "/welcome3",
+      path: "/welcomethird",
       element: <WelcomeThird />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
   ]);
   return (
