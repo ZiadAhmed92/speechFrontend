@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import logo2 from "../../image/logo2.png"
-import"./welcome.css"
+import"./Welcome.css"
 const WelcomeSecond = () => {
   return (
       <div className="welcome1">
