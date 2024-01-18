@@ -2,9 +2,9 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 // import '@fortawesome/fontawesome-free/css/all.min.css'
-import Welcome1 from './Components/Welcome/welcome1.jsx'
-import Welcome2 from './Components/Welcome/welcome2.jsx'
-import Welcome3 from './Components/Welcome/welcome3.jsx'
+import Welcome1 from './Components/Welcome/welcome1'
+import Welcome2 from './Components/Welcome/welcome2'
+import Welcome3 from './Components/Welcome/welcome3'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 function App() {
  
