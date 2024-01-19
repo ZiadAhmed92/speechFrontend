@@ -10,7 +10,7 @@ import Login from './Components/Auth/Login'
 import Register from './Components/Auth/Register'
 import FirstPage from './Components/FirstPage/FirstPage.jsx'
 import { ForgetPassword } from './Components/ForgetPassword/ForgetPassword.jsx'
-import { ForgetPasswordSecond } from './Components/ForgetPassword/forgetPasswordSecond.jsx'
+import { ForgetPasswordSecond } from './Components/ForgetPassword/ForgetPasswordSecond'
 import Homepage from './Components/HomePage/HomePage'
 import Newrecord from "./Components/NestedRouter/NewRecord/Newrecord"
 import Account from "./Components/NestedRouter/Account/Account"
