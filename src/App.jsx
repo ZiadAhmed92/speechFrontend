@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
-// import '@fortawesome/fontawesome-free/css/all.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import {RouterProvider, createBrowserRouter } from 'react-router-dom'
 import WelcomeThird from './Components/Welcome/WelcomeThird'
 import WelcomeFirst from './Components/Welcome/WelcomeFirst'

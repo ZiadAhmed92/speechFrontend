@@ -3,8 +3,11 @@ import logo1 from "../../image/signUp.png"
 import logo2 from "../../image/signUp2.png"
 import logo3 from "../../image/signUp3.png"
 import logo4 from "../../image/signUp4.png"
+
 import "./Auth.css"
+import { useState } from "react"
 const Register = () => {
+    const [type, setType] = useState("password")
     return (
         <div className="container register d-flex align-items-center">
 
@@ -31,8 +34,18 @@ const Register = () => {
                             <div className="input d-flex gap-2 p-2">
                                 <input type="text" placeholder="Birthday " className="input-signup" />
                                 <input type="number" placeholder="Phone Number " className="input-signup" />
+                                <select id="gender" className="input-signup curser-pointer" >
+                                    <option value="male" className="male">Male</option>
+                                    <option value="female" className="male">Female</option>
+                                </select>
                                 <input type="email" placeholder="Email " className="input-signup" />
-                                <input type="password" placeholder="Password " className="input-signup" />
+                                <div className="position-relative">
+                                    <input type={`${type}`} placeholder="Password " className="input-signup" />
+                                    <div className="icon-password position-absolute ">
+                                        {type == "password" ? <i onClick={() => setType("text")} className="eya fa-solid fa-eye"></i>
+                                            : <i onClick={() => setType("password")} className="eya fa-solid fa-eye-slash"></i>}
+                                    </div>
+                                </div>
                             </div>
                             <div className="text-center">
                                 <Link to="/login"><button className=" btn-login btn-signUp">Sign Up</button></Link>

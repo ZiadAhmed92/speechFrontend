@@ -19,3 +19,70 @@
     }
     
 }
+input[type="file"] {
+    position: relative;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    
+}
+
+input[type="file"]::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url("../../../image/setRecord.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   z-index: 1;
+   border-radius:5px ;
+   -webkit-border-radius:5px ;
+   -moz-border-radius:5px ;
+   -ms-border-radius:5px ;
+   -o-border-radius:5px ;
+}
+
+input[type="file"]:focus::before {
+    outline: 2px solid #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+    
+}
+.record {
+    position: relative;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    /* أو اضبطها وفقًا لحجم الصورة الفعلي */
+    cursor: pointer;
+    /* تغيير المؤشر عند تحريك الماوس فوق الصورة */
+}
+
+.record::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../image/record.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* يمكنك أيضاً تخصيص مظهر التحديد أو التأكيد هنا */
+.record:focus::before {
+    outline: 2px solid #3498db;
+    /* لتحديد العنصر عند التركيز */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+    /* تأثير الظل عند التركيز */
+}

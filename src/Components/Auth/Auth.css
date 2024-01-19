@@ -18,7 +18,8 @@
 
 }
 
-::placeholder {
+::placeholder,
+.male {
     font-size: 1.2em;
     color: rgba(0, 0, 0, 0.635);
 }
@@ -53,6 +54,12 @@
     -o-border-radius: 0px 0px 50px 50px;
 }
 
+.icon-password {
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
 .ForgetPassword {
     cursor: pointer;
 }
@@ -85,7 +92,7 @@
 @media only screen and (max-width: 769px) {
     .row-login {
         flex-direction: column-reverse !important;
-       
+
     }
 
     .or {
@@ -98,6 +105,16 @@
 
     .ForgetPassword {
         font-size: 1.2em !important;
+    }
+
+    .img-login {
+        width: 50% !important;
+
+
+    }
+
+    .img-parent {
+        text-align: center;
     }
 }
 
@@ -145,7 +162,7 @@
     border: none;
     padding: 8px;
     width: 100%;
-  
+
 
 }
 
@@ -166,11 +183,17 @@
     background: #8C85C8 !important;
     margin: 10px 0;
 }
+
+.curser-pointer {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 769px) {
-    .logo-signup{
+    .logo-signup {
         display: none;
     }
-    .text-signUp{
+
+    .text-signUp {
         font-size: 40px;
         text-align: center;
     }

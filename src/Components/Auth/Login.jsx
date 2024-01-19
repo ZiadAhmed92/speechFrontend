@@ -15,6 +15,7 @@ const Login = () => {
                            <div className="input d-flex gap-4">
                                 <input type="email" placeholder="Email " className="email" />
                                 <input type="password" placeholder="Password " className="password" />
+                                
                            </div>
                             <Link to="/forgetpassword">    <h6 className="sub-title ms-4 py-3 fs-4 ForgetPassword ">Forget Password ?</h6></Link>
                             <div className="text-center">
@@ -35,8 +36,8 @@ const Login = () => {
                         </div>
                   </div>
                 </div>
-                <div className="col-md-6">
-                    <img src={signIn} className="w-100" />
+                <div className="col-md-6 img-parent">
+                    <img src={signIn} className="img-login w-100" />
                 </div>
             </div>
         </div>
