@@ -9,7 +9,7 @@ const WelcomeThird = () => {
           </div>
           <div className="paragraph-welcome1 w-75 m-auto">
            
-              <h6 className="text-wel2"> <span className="sub-title">Then ,</span> Emotion statistics are shown in their percentages by analyzing the voice.</h6>
+              <h6 className="text-wel2 text-center"> <span className="sub-title">Then ,</span> Emotion statistics are shown in their percentages by analyzing the voice.</h6>
           </div>
           <div className="w-75 text-center">
               <Link to="/register"> <button className="btn-welcome1">Get Started</button></Link>

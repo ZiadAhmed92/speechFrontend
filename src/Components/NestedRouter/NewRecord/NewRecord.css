@@ -1,0 +1,21 @@
+
+.parent-record{
+    min-height: 400px;
+}
+.record{
+    width: 100px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+.btn-record {
+    width: 90%;
+        font-size: 1.3em !important;
+        background: #CA4B7F;
+        color: var(--text);
+        padding: 10px 20px;
+    }
+    
+}

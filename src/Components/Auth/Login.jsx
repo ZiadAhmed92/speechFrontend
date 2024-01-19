@@ -6,7 +6,7 @@ import ensta from "../../image/ensta.png"
 import "./Auth.css"
 const Login = () => {
     return (
-        <div className="container ">
+        <div className="container vh-100">
             <div className="row row-login">
                 <div className="col-md-6 p-3">
                   <div>
@@ -16,9 +16,9 @@ const Login = () => {
                                 <input type="email" placeholder="Email " className="email" />
                                 <input type="password" placeholder="Password " className="password" />
                            </div>
-                            <h6 className="sub-title ms-4 py-3 fs-4 ForgetPassword ">Forget Password ?</h6>
+                            <Link to="/forgetpassword">    <h6 className="sub-title ms-4 py-3 fs-4 ForgetPassword ">Forget Password ?</h6></Link>
                             <div className="text-center">
-                                <button className="btn-login">Log In</button>
+                                <Link to="/firstpage"> <button className="btn-login">Log In</button></Link>
                                 <h6 className="text-login my-3">Don’t have an account? </h6>
                                 <Link to="/register"> <h6 className="sub-title fs-6">Sign Up </h6></Link>
                             </div>

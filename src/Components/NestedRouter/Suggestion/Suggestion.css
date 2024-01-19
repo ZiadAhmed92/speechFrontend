@@ -1,0 +1,20 @@
+.textarea{
+    width: 50%;
+    min-height: 300px;
+    border-radius: 50px;
+        border: 6px solid #D05F8E;
+        background: rgba(252, 235, 252, 0.83);
+        caret-color: #D05F8E;
+            text-indent: 30px;
+}
+.textarea:focus{
+    outline: none;
+}
+@media only screen and (max-width: 600px) {
+.textarea {
+        width: 95%;
+        min-height: 200px;
+       
+    }
+
+}

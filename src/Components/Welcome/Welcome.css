@@ -8,7 +8,7 @@
 }
 .logo1 {
   width: 600px;
-  height: 500px;
+  height: 300px;
   flex-shrink: 0;
 }
 
@@ -59,7 +59,7 @@
 @media only screen and (max-width: 600px) {
   .logo1 {
     width: 100%;
-    height: 400px;
+    height: 300px;
   }
   .paragraph-welcome1{
     width: 90% !important;
