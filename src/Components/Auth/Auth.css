@@ -95,8 +95,18 @@
     right: 60px;
 
 }
-
+.row-login{
+height: 100vh;
+}
 @media only screen and (max-width: 769px) {
+    .password-login {
+    
+            right: 35px;
+    
+        }
+    .row-login {
+            height: fit-content;
+        }
     .row-login {
         flex-direction: column-reverse !important;
 

@@ -9,7 +9,7 @@ const Login = () => {
     const [type, setType] = useState("password")
     return (
         <div className="container ">
-            <div className="row vh-100 align-items-center row-login">
+            <div className="row  align-items-center row-login">
                 <div className="col-md-6 p-3">
                     <div>
                         <h3 className="sub-title login">Login Account</h3>
