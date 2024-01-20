@@ -1,41 +1,99 @@
-.username{
-    color: #EF5794 ;
+.username {
+    color: #EF5794;
 }
-.name{
-font-size: 1.5em;
-font-weight: 600;
+
+.name {
+    font-size: 1.5em;
+    font-weight: 600;
 }
-.parent-account{
+
+.parent-account {
     width: 50%;
     margin: auto;
 
 }
-.logo-account1{
-width: 150px;
+
+.logo-account1 {
+    width: 150px;
 }
-.logo-account{
+
+.logo-account {
     width: 40px;
     height: 30px;
     /* background: #000; */
-   
+
 
 }
-.details{
+
+.details {
     width: 50%;
     padding: 9px;
     border-radius: 15px;
     background: #A09A9A;
-    
     margin: auto;
 }
+
+.img-account {
+    width: 40px;
+    margin: 0 10px;
+}
+
+.btn-account {
+    border-radius: 50px;
+    background: #8A33B2;
+    border: none;
+    padding: 10px 20px;
+    color: var(--text);
+    font-weight: 800;
+    text-align: center;
+    font-family: Inter;
+    letter-spacing: 1px;
+
+}
+
+.fa-trash-can {
+    color: black;
+    font-size: 1.7em;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.fa-trash-can:hover {
+    color: red;
+   
+}
+
+.text-account {
+    color: #EF0707;
+    text-align: center;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 700px) {
     .details {
-            width: 95%;
-        
+        width: 95%;
+
+    }
+
+    .parent-account {
+        width: 95%;
+
+
+    }
+    .between{
+        justify-content: space-between !important;
+    }
+        .img-account {
+            width: 30px;
+            margin: 0 5px;
         }
-                .parent-account {
-                    width: 95%;
-                    
-        
-                }
 }

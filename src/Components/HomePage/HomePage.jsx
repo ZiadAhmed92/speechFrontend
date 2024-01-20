@@ -7,7 +7,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -15,10 +14,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { Link, Outlet } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -75,13 +71,13 @@ export default function Homepage() {
     const [open, setOpen] = React.useState(false);
 
     React.useEffect(() => {
-        if (mood === "light"){
-        document.body.classList.remove("dark")
-        document.body.classList.add("light")
-    }else{
+        if (mood === "light") {
+            document.body.classList.remove("dark")
+            document.body.classList.add("light")
+        } else {
             document.body.classList.remove("light")
             document.body.classList.add("dark")
-    }
+        }
     }, [mood])
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -90,14 +86,15 @@ export default function Homepage() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    const Array1 = [
-        { text: "New record", icon: "", path: "" },
-        { text: "Account", icon: "", path: "account" },
-        { text: "History", icon: "", path: "history" },
-        { text: "Suggestion", icon: "", path: "suggestion" },
-        { text: "Language", icon: "", path: "language" },
-        { text: "Log Out", icon: "", path: "/login" },
 
+    const Array1 = [
+        { text: "New record", icon: { icon: <i className="fa-solid fa-microphone"></i>}, path: "" },
+        { text: "Account", icon: { icon: <i className="fa-regular fa-circle-user"></i> }, path: "account" },
+        { text: "History", icon: { icon: <i className="fa-solid fa-clock-rotate-left"></i> }, path: "history" },
+        { text: "Suggestion", icon: { icon: <i className="fa-solid fa-pen-nib"></i> }, path: "suggestion" },
+        { text: "Change Password", icon: { icon: <i className="fa-solid fa-unlock"></i> }, path: "/forgetpasswordsecond" },
+        { text: "Change Language", icon: { icon: <i className="fa-solid fa-language"></i> }, path: "language" },
+        { text: "Log Out", icon: { icon: <i className="fa-solid fa-right-from-bracket"></i> }, path: "/login" },
 
     ];
     return (
@@ -119,9 +116,9 @@ export default function Homepage() {
                             <input
                                 type="checkbox"
                                 onClick={() => {
-                                    localStorage.setItem("mode", mood === "dark" ?"light":"dark");
+                                    localStorage.setItem("mode", mood === "dark" ? "light" : "dark");
                                     setMood(localStorage.getItem("mode"))
-                                   
+
                                 }}
                                 className="theme-switch__checkbox"
                             />
@@ -177,21 +174,22 @@ export default function Homepage() {
                 <Divider />
                 <List>
                     {Array1.map((item) => (
-                        <ListItem  key={item.text} disablePadding sx={{ display: "block" }}>
+                        <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
                             <Link className="Link" to={`${item.path}`}>
                                 <ListItemButton
                                     sx={{
                                         minHeight: 48,
                                         justifyContent: open ? "initial" : "center",
                                         px: 2.5,
+                                       
                                     }}
                                 >
-
+                                    <div className='icon-slider mx-1'>{item.icon.icon}</div>
                                     <ListItemText
                                         onClick={() => { setOpen(false) }}
                                         className='sidebar'
                                         primary={item.text}
-                                        sx={{ opacity: open ? 1 : 0}}
+                                        sx={{ opacity: open ? 1 : 0 }}
                                     />
                                 </ListItemButton>
                             </Link>

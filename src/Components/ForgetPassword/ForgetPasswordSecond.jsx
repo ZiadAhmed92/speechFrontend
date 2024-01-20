@@ -8,7 +8,7 @@ export const ForgetPasswordSecond = () => {
             <div className="container pt-2">
                 <div className="row mt-2">
                     <div className="col-md-6">
-                        <Link to="/forgetpassword"><img src={img1} className="img-1-forget" /></Link>
+                        <Link to="/homepage"><img src={img1} className="img-1-forget" /></Link>
                         
                         <form className="d-flex flex-column gap-2 mt-5">
                             <label htmlFor="forgetPassword" className="label-forget">Create New Password</label>

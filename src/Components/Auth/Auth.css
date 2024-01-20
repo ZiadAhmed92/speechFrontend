@@ -88,6 +88,13 @@
 .logo-login {
     width: 50px;
 }
+.password-login{
+    cursor: pointer;
+   position: absolute;
+    top: 110px;
+    right: 60px;
+
+}
 
 @media only screen and (max-width: 769px) {
     .row-login {
@@ -128,7 +135,7 @@
 .text-signUp {
     color: #8C85C8;
     font-family: "La Belle Aurore";
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -144,7 +151,7 @@
 }
 
 .logo3 {
-    width: 50px;
+    width: 40px;
 }
 
 .firstName {
@@ -197,4 +204,5 @@
         font-size: 40px;
         text-align: center;
     }
+   
 }

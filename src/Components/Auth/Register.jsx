@@ -9,10 +9,10 @@ import { useState } from "react"
 const Register = () => {
     const [type, setType] = useState("password")
     return (
-        <div className="container register d-flex align-items-center">
+        <div className="container vh-100 register d-flex align-items-center">
 
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 ">
                     <div>
                         <h4 className="text-signUp">Hi!<br /> Create an account.</h4>
                         <div className="d-flex align-items-center gap-5">

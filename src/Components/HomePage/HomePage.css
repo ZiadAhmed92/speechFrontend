@@ -18,19 +18,22 @@
     font-weight: 600;
 }
 
-.sidebar {
-    color: var(--text);
-    font-family: Inter;
-    font-size: 30px !important;
-    font-style: normal;
-    font-weight: 600;
-}
 
 .box {
     color: var(--text);
 }
-
-
+.icon-slider{
+   color: var(--text) !important;
+   margin: 0 8px 0 0 !important;
+   font-size: 1.5em;
+}
+.sidebar {
+    color: var(--text);
+    /* font-family: Inter;
+    font-size: 60px !important;
+    font-style: normal;
+    font-weight: 600; */
+}
 
 
 
