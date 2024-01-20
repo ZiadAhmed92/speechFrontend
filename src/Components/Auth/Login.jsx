@@ -64,11 +64,24 @@ const Login = () => {
                     <div>
                         <h3 className="sub-title login">Login Account</h3>
                         <form onSubmit={submitLogin} >
+                            <div className="text-danger text-center">
+                                {errorList.filter((item) => item.context.key == "email")[0]?.message}
+                            </div>
                             <div className="input d-flex gap-4 position-relative">
                                 <input type="email" placeholder="Email " className="email" name="email"
                                     onChange={getUserData} />
+                                
                                 <input type={`${type}`} placeholder="Password " className="password" name="password"
                                     onChange={getUserData} />
+                                {errorList.map((error, i) => {
+                                    if (error.context.label === "password") {
+                                        return (
+                                            <p key={i} className="text-center text-danger">
+                                                The password is weak and must not be less than five numbers{" "}
+                                            </p>
+                                        );
+                                    } 
+                                })}
                                 <div className="password-login">
                                     {type == "password" ? <i onClick={() => setType("text")} className="eya fs-3 fa-solid fa-eye"></i>
                                         : <i onClick={() => setType("password")} className="eya fs-3 fa-solid fa-eye-slash"></i>}
