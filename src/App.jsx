@@ -17,6 +17,7 @@ import Account from "./Components/NestedRouter/Account/Account"
 import History from "./Components/NestedRouter/History/History"
 import Suggestion from "./Components/NestedRouter/Suggestion/Suggestion"
 import Language from "./Components/NestedRouter/Language/Language"
+import Result from './Components/NestedRouter/Result/Result.jsx'
 function App() {
 
   const router = createBrowserRouter([
@@ -51,6 +52,10 @@ function App() {
         {
           path: "language",
           element: <Language />,
+        },
+        {
+          path: "result",
+          element: <Result />,
         },
       ],
     },

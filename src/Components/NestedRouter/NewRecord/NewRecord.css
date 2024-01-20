@@ -8,10 +8,16 @@
     cursor: pointer;
 }
 
-
+.lottieStop{
+    width: 60px;
+}
 @media only screen and (max-width: 600px) {
-.btn-record {
-    width: 90%;
+
+
+
+
+    .btn-record {
+    width: 100%;
         font-size: 1.3em !important;
         background: #CA4B7F;
         color: var(--text);

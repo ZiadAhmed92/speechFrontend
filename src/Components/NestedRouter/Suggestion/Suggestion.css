@@ -10,11 +10,19 @@
 .textarea:focus{
     outline: none;
 }
+.lottie{
+    color: var(--text);
+    font-size: 1.5em;
+}
 @media only screen and (max-width: 600px) {
 .textarea {
         width: 95%;
         min-height: 200px;
        
     }
+        .lottie {
+            
+            font-size: 1em;
+        }
 
 }

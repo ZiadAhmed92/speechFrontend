@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "./NewRecord.css"
+import { Link } from 'react-router-dom';
+import Lottie from "lottie-react";
+import stop from "../../../Animation/stop.json"
+import sound from "../../../Animation/sound.json"
 
 const Newrecord = () => {
+
+  const [stoprecording, setStopRecording] = useState(false);
   const [recording, setRecording] = useState(false);
   const [audioStream, setAudioStream] = useState(null);
   const [audioChunks, setAudioChunks] = useState([]);
@@ -63,12 +69,23 @@ const Newrecord = () => {
       };
     }
   }, [recording, audioStream, audioChunks]);
+
+  function checkRecord() {
+    if (recording) {
+      stopRecording();
+      setStopRecording(false)
+    } else {
+      startRecording();
+      setStopRecording(true)
+    }
+
+  }
   return (
     <div className='parent-record d-flex flex-column align-items-center justify-content-around'>
       <h4 className='sub-title'>Click the button to start recording or import an audio</h4>
       <div className='d-flex align-items-center justify-content-center'>
         {/* <img src={img1} onClick={recording ? stopRecording : startRecording} className='record' /> */}
-        <div onClick={recording ? stopRecording : startRecording} className='record' ></div>
+        <div onClick={checkRecord} className='record' ></div>
         <input type="file" accept="audio/*" onChange={handleFileChange} />
       </div>
 
@@ -76,11 +93,16 @@ const Newrecord = () => {
         <div className='text-center text-danger'>
           {error}
         </div>
-        <div className='text-center'>
-          <button onClick={recording ? stopRecording : startRecording}>
-            {recording ? 'Stop Recording' : 'Start Recording'}
-          </button>
-        </div>
+        <div className='parentLottie d-flex align-items-center justify-content-center'>
+         <div onClick={checkRecord}>
+            {stoprecording && !Boolean(error) ?<Lottie animationData={stop} className='lottieStop curser-pointer' /> : ""}
+         </div>
+         <div>
+           
+            {stoprecording && !Boolean(error) ? <Lottie animationData={sound} className='lottieSound' /> : ""}
+         </div>
+       </div>
+
         {audioUrl && (
           <div>
             <audio controls src={audioUrl} />
@@ -92,7 +114,7 @@ const Newrecord = () => {
           </div>
         )}
       </div>
-      <button onClick={handleUpload} className="btn-f-page btn-record"> Show Result</button>
+      <Link to="/homepage/result"><button onClick={handleUpload} className="btn-f-page btn-record"> Show Result</button></Link>
     </div>
   )
 }
