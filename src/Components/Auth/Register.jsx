@@ -77,8 +77,7 @@ const Register = () => {
         e.preventDefault();
         setLoading(true);
 
-        let validation = validateRegisterForm();
-        console.log(validation.error.details)
+        let validation = validateRegisterForm()
         if (validation.error) {
             setErrorList(validation.error.details);
             setLoading(false)

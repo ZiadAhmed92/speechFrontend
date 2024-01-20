@@ -82,6 +82,10 @@ const Login = () => {
                                         );
                                     } 
                                 })}
+                                <p className="text-center text-danger">
+                                    {error}
+                                </p>
+                                
                                 <div className="password-login">
                                     {type == "password" ? <i onClick={() => setType("text")} className="eya fs-3 fa-solid fa-eye"></i>
                                         : <i onClick={() => setType("password")} className="eya fs-3 fa-solid fa-eye-slash"></i>}
