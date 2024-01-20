@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import "./Account.css"
 import account from "../../../image/changeAccount.png"
 import img1 from "../../../image/welcome2.png"
+import { speechContext } from '../../Context/Store.jsx'
+import axios from 'axios'
 const Account = () => {
+  let { userData, dataUser, logOut } = useContext(speechContext);
+  // dataUser();
+  
+  let deleteAccount = async () => {
+    try {
+      const { data } = await axios.delete(`https://speech-emotion.onrender.com/delete/${userData?._id}`)
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <div>
       <h2 className='sub-title py-3 '>Account</h2>
@@ -11,7 +24,7 @@ const Account = () => {
         <div>
           <h2 className='username'>UserName </h2>
           <br />
-          <h6 className='sub-title name'>Ziad</h6>
+          <h6 className='sub-title name'>{userData?.first_name}</h6>
         </div>
       </div>
       <div className='details'>
@@ -69,7 +82,7 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username'>Name</h3>
           </div>
-          <h3>Ziad</h3>
+          <h3>{userData?.first_name}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
@@ -79,7 +92,7 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username '>Phone</h3>
           </div>
-          <h3>01559992401</h3>
+          <h3>{userData?.phone}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
@@ -89,17 +102,17 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username '>Gender</h3>
           </div>
-          <h3>Male</h3>
+          <h3>{userData?.gender}</h3>
 
         </div>
         <div>
           <div className='between d-flex align-items-center justify-content-center'>
-            <img src={account} className='img-account' />
+            <img src={userData?.account} className='img-account' />
             <button className='btn-account'> Change Account Info</button>
           </div>
           <div className='between d-flex  justify-content-center gap-4 my-4'>
             <i className="fa-solid fa-trash-can "></i>
-            <p className='text-account'>Delete my Account</p>
+            <p className='text-account' onClick={deleteAccount}>Delete my Account</p>
           </div>
         </div>
 

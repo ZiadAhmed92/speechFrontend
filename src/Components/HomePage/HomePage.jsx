@@ -16,6 +16,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link, Outlet } from 'react-router-dom';
+import { speechContext } from '../Context/Store.jsx';
 
 const drawerWidth = 240;
 
@@ -65,6 +66,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function Homepage() {
+    let {  logOut } = React.useContext(speechContext);
     const [mood, setMood] = React.useState("light")
     // const [mood, setMood] = React.useState(localStorage.getItem("mode"))
     const theme = useTheme();
@@ -94,7 +96,6 @@ export default function Homepage() {
         { text: "Suggestion", icon: { icon: <i className="fa-solid fa-pen-nib"></i> }, path: "suggestion" },
         { text: "Change Password", icon: { icon: <i className="fa-solid fa-unlock"></i> }, path: "/forgetpasswordsecond" },
         { text: "Change Language", icon: { icon: <i className="fa-solid fa-language"></i> }, path: "language" },
-        { text: "Log Out", icon: { icon: <i className="fa-solid fa-right-from-bracket"></i> }, path: "/login" },
 
     ];
     return (
@@ -187,7 +188,7 @@ export default function Homepage() {
                                     <div className='icon-slider mx-1'>{item.icon.icon}</div>
                                     <ListItemText
                                         onClick={() => { setOpen(false) }}
-                                        className='sidebar'
+                                        className='sidebar '
                                         primary={item.text}
                                         sx={{ opacity: open ? 1 : 0 }}
                                     />
@@ -195,6 +196,31 @@ export default function Homepage() {
                             </Link>
                         </ListItem>
                     ))}
+                </List>
+                <List className='logout'>
+                    
+                        <ListItem  disablePadding sx={{ display: "block" }}>
+                            <Link className="Link" to={`/login`}>
+                                <ListItemButton
+                                    sx={{
+                                        minHeight: 48,
+                                        justifyContent: open ? "initial" : "center",
+                                        px: 2.5,
+
+                                    }}
+                                >
+                                <div className='icon-slider mx-1'><i className="fa-solid fa-right-from-bracket"></i></div>
+                                    <ListItemText
+                                        onClick={() => { setOpen(false);logOut() }}
+                                    className='sidebar '
+                                        primary={"Log Out"}
+                                        
+                                        sx={{ opacity: open ? 1 : 0 }}
+                                    />
+                                </ListItemButton>
+                            </Link>
+                        </ListItem>
+                    
                 </List>
 
             </Drawer>

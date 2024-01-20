@@ -1,22 +1,74 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import signIn from "../../image/signIn.png"
 import face from "../../image/fb.png"
 import google from "../../image/go.png"
 import ensta from "../../image/ensta.png"
 import "./Auth.css"
+import axios from "axios";
+import joi from "joi";
 import { useState } from "react"
 const Login = () => {
+    let Navigate = useNavigate();
     const [type, setType] = useState("password")
+    const [error, setError] = useState("");
+    const [errorList, setErrorList] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState({
+        email: "",
+        password: "",
+    });
+    function getUserData(e) {
+        let MyUser = { ...user };
+        MyUser[e.target.name] = e.target.value;
+        setUser(MyUser);
+    }
+    async function sendUserData() {
+        let { data } = await axios.post(
+            `https://speech-emotion.onrender.com/signin`,
+            user
+        );
+        console.log(data)
+        if (data.message === "login") {
+            localStorage.setItem("Token", data.token);
+
+            Navigate("/firstpage");
+        } else {
+            setLoading(false);
+            setError(data.message);
+        }
+    }
+
+    function validateLoginForm() {
+        let schema = joi.object({
+            email: joi.string().email({ tlds: { allow: ["com", "net", "pro"] } }),
+            password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]{6,30}$")),
+        });
+        return schema.validate(user, { abortEarly: false });
+    }
+    function submitLogin(e) {
+        setLoading(true);
+        e.preventDefault();
+        let validation = validateLoginForm();
+
+        if (validation.error) {
+            setErrorList(validation.error.details);
+            setLoading(false);
+        } else {
+            sendUserData();
+        }
+    }
     return (
         <div className="container ">
             <div className="row  align-items-center row-login">
                 <div className="col-md-6 p-3">
                     <div>
                         <h3 className="sub-title login">Login Account</h3>
-                        <form>
+                        <form onSubmit={submitLogin} >
                             <div className="input d-flex gap-4 position-relative">
-                                <input type="email" placeholder="Email " className="email" />
-                                <input type={`${type}`} placeholder="Password " className="password" />
+                                <input type="email" placeholder="Email " className="email" name="email"
+                                    onChange={getUserData} />
+                                <input type={`${type}`} placeholder="Password " className="password" name="password"
+                                    onChange={getUserData} />
                                 <div className="password-login">
                                     {type == "password" ? <i onClick={() => setType("text")} className="eya fs-3 fa-solid fa-eye"></i>
                                         : <i onClick={() => setType("password")} className="eya fs-3 fa-solid fa-eye-slash"></i>}
@@ -24,7 +76,7 @@ const Login = () => {
                             </div>
                             <Link to="/forgetpassword">    <h6 className="sub-title ms-4 py-3 fs-4 ForgetPassword ">Forget Password ?</h6></Link>
                             <div className="text-center">
-                                <Link to="/firstpage"> <button className="btn-login">Log In</button></Link>
+                                <button className="btn-login">{loading ? <i className="fas fa-spinner fa-spin"></i> : "Sign In"}</button>
                                 <h6 className="text-login my-3">Don’t have an account? </h6>
                                 <Link to="/register"> <h6 className="sub-title fs-6">Sign Up </h6></Link>
                             </div>
