@@ -4,6 +4,7 @@ import account from "../../../image/changeAccount.png"
 import img1 from "../../../image/welcome2.png"
 import { speechContext } from '../../Context/Store.jsx'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 const Account = () => {
   let { userData, dataUser, logOut } = useContext(speechContext);
   // dataUser();
@@ -108,7 +109,7 @@ const Account = () => {
         <div>
           <div className='between d-flex align-items-center justify-content-center'>
             <img src={userData?.account} className='img-account' />
-            <button className='btn-account'> Change Account Info</button>
+            <Link to="/update"><button className='btn-account'> Change Account Info</button></Link>
           </div>
           <div className='between d-flex  justify-content-center gap-4 my-4'>
             <i className="fa-solid fa-trash-can "></i>

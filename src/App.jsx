@@ -18,6 +18,8 @@ import History from "./Components/NestedRouter/History/History"
 import Suggestion from "./Components/NestedRouter/Suggestion/Suggestion"
 import Language from "./Components/NestedRouter/Language/Language"
 import Result from './Components/NestedRouter/Result/Result.jsx'
+import UpdateUser from './Components/NestedRouter/UpdateUser/UpdateUser'
+import ThankYou from './Components/ThankYou/ThankYou'
 function App() {
 
   const router = createBrowserRouter([
@@ -58,6 +60,14 @@ function App() {
           element: <Result />,
         },
       ],
+    },
+    {
+      path: "/update",
+      element: <UpdateUser />,
+    },
+    {
+      path: "/thanks",
+      element: <ThankYou />,
     },
     {
       path: "/welcomethird",
