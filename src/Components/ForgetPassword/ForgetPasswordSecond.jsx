@@ -16,7 +16,7 @@ export const ForgetPasswordSecond = () => {
         password: "",
         confirmPassword: "",
     });
-
+    // ^(?=.*?[A-Z])?(?=.*?[a-z])(?=.*?[0-9])?(?=.*?[#?!@$%^&*-])?.{5,18}$
     function getUserData(e) {
         let MyUser = { ...password };
         MyUser[e.target.name] = e.target.value;
@@ -50,19 +50,19 @@ export const ForgetPasswordSecond = () => {
                         
                         <form onSubmit={submitPassword} className="d-flex flex-column gap-2 mt-5 position-relative">
                             <div className="text-danger">{error}</div>
-                            <label htmlFor="forgetPassword" className="label-forget">Create New Password</label>
+                            <label htmlFor="forgetPassword" className="label-forget">Old New Password</label>
                             <input type={`${type}`} className="input-forget" name="password" onChange={getUserData} />
                             <div className="new-password">
                                 {type == "password" ? <i onClick={() => setType("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
-                            <label htmlFor="forgetPassword" className="label-forget">Confirm New Password</label>
+                            <label htmlFor="forgetPassword" className="label-forget"> New Password</label>
                             <input type={`${type1}`} className="input-forget" name="confirmPassword" onChange={getUserData} />
                             <div className="confirm-password">
                                 {type1 == "password" ? <i onClick={() => setType1("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType1("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
-                            <button type="submit" className="btn-forget"> Confirm</button>
+                            <button type="submit" className="btn-forget"> Change</button>
 
                         </form>
 

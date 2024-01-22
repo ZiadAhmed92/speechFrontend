@@ -66,7 +66,7 @@ const Register = () => {
             email: Joi.string()
                 .email({ tlds: { allow: false } }),
             password: Joi.string()
-                .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+                .pattern(new RegExp('^(?=.*?[A-Z])?(?=.*?[a-z])?(?=.*?[0-9])?(?=.*?[#?!@$%^&*-])?.{5,18}$')),
 
         })
         return schema.validate(user, { abortEarly: false })
@@ -108,21 +108,45 @@ const Register = () => {
                                 <input type="text" placeholder="Last Name " className="lastName" name='last_name' onChange={getUserData} />
                             </div>
                             <div className="text-danger">
-                                {errorList.filter((item) => item.context.key == "first_name")[0]?.message}
+                                {errorList.map((error, i) => {
+                                    if (error.context.label === "first_name") {
+                                        return (
+                                            <p key={i} className="text-danger text-capitalize ms-2">
+                                                first_name is not allowed to be empty
+                                            </p>
+                                        );
+                                    }
+                                })}
                             </div>
                             <div className="text-danger">
-                                {errorList.filter((item) => item.context.key == "last_name")[0]?.message}
+                                {errorList.map((error, i) => {
+                                    if (error.context.label === "last_name") {
+                                        return (
+                                            <p key={i} className="text-danger text-capitalize ms-2">
+                                                last_name is not allowed to be empty
+                                            </p>
+                                        );
+                                    }
+                                })}
                             </div>
                             <div className="input d-flex gap-2 p-2">
                                 <input type="date" placeholder="Birthday " className="input-signup" name='birthday' onChange={getUserData} />
                                 <div className="text-danger">
-                                    {errorList.filter((item) => item.context.key == "birthday")[0]?.message}
+                                    {errorList.map((error, i) => {
+                                        if (error.context.label === "birthday") {
+                                            return (
+                                                <p key={i} className="text-danger text-capitalize">
+                                                    birthday is not allowed to be empty
+                                                </p>
+                                            );
+                                        }
+                                    })}
                                 </div>
                                 <input type="number" placeholder="Phone Number " className="input-signup" name='phone' onChange={getUserData} />
                                 {errorList.map((error, i) => {
                                     if (error.context.label === "phone") {
                                         return (
-                                            <p key={i} className="text-danger">
+                                            <p key={i} className="text-danger text-capitalize">
                                                 Phone Incorrect
                                             </p>
                                         );
@@ -134,16 +158,33 @@ const Register = () => {
                                     <option value="female" className="male">Female</option>
                                 </select>
                                 <div className="text-danger">
-                                    {errorList.filter((item) => item.context.key == "gender")[0]?.message}
+                                    {errorList.map((error, i) => {
+                                        if (error.context.label === "gender") {
+                                            return (
+                                                <p key={i} className="text-danger text-capitalize">
+                                                    gender is not allowed to be empty
+                                                </p>
+                                            );
+                                        }
+                                    })}
                                 </div>
                                 <input type="email" placeholder="Email " className="input-signup" name='email' onChange={getUserData} />
                                 <div className="text-danger">
+                                    
                                     {errorList.filter((item) => item.context.key == "email")[0]?.message}
                                 </div>
                                 <div className="position-relative">
                                     <input type={`${type}`} placeholder="Password " className="input-signup" name='password' onChange={getUserData} />
-                                    <div className="text-danger">
-                                        {errorList.filter((item) => item.context.key == "password")[0]?.message}
+                                    <div className="text-danger text-capitalize">
+                                        {errorList.map((error, i) => {
+                                            if (error.context.label === "password") {
+                                                return (
+                                                    <p key={i} className="text-danger text-capitalize">
+                                                        The password is weak and must not be less than five numbers
+                                                    </p>
+                                                );
+                                            }
+                                        })}
                                     </div>
                                     <div className="icon-password position-absolute ">
                                         {type == "password" ? <i onClick={() => setType("text")} className="eya fa-solid fa-eye"></i>

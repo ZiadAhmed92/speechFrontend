@@ -25,7 +25,7 @@ const Account = () => {
         <div>
           <h2 className='username'>UserName </h2>
           <br />
-          <h6 className='sub-title name'>{userData?.first_name}</h6>
+          <h6 className='sub-title name text-capitalize'>{userData?.first_name}</h6>
         </div>
       </div>
       <div className='details'>
@@ -83,7 +83,7 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username'>Name</h3>
           </div>
-          <h3>{userData?.first_name}</h3>
+          <h3 className='text-capitalize'>{userData?.first_name}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
@@ -103,12 +103,12 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username '>Gender</h3>
           </div>
-          <h3>{userData?.gender}</h3>
+          <h3 className='text-capitalize'>{userData?.gender}</h3>
 
         </div>
         <div>
           <div className='between d-flex align-items-center justify-content-center'>
-            <img src={userData?.account} className='img-account' />
+            <img src={account} className='img-account' />
             <Link to="/update"><button className='btn-account'> Change Account Info</button></Link>
           </div>
           <div className='between d-flex  justify-content-center gap-4 my-4'>

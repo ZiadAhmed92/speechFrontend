@@ -41,7 +41,7 @@ const Login = () => {
     function validateLoginForm() {
         let schema = joi.object({
             email: joi.string().email({ tlds: { allow: ["com", "net", "pro"] } }),
-            password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]{6,30}$")),
+            password: joi.string().pattern(new RegExp("^(?=.*?[A-Z])?(?=.*?[a-z])?(?=.*?[0-9])?(?=.*?[#?!@$%^&*-])?.{5,18}$")),
         });
         return schema.validate(user, { abortEarly: false });
     }
