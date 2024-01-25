@@ -1,6 +1,6 @@
 .MuiToolbar-root.MuiToolbar-gutters,
 .MuiPaper-root.MuiPaper-elevation {
-    background: #c41d6b !important;
+    background:var(--header) !important
 }
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
@@ -8,7 +8,7 @@
 }
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
-    color: var(--text)
+    color: var(--text) 
 }
 
 .MuiTypography-root.MuiTypography-body1 {
@@ -23,12 +23,12 @@
     color: var(--text);
 }
 .icon-slider{
-   color: var(--text) !important;
+   color: var(--textHeader) !important;
    margin: 0 8px 0 0 !important;
    font-size: 1.5em;
 }
 .sidebar {
-    color: var(--text);
+    color: var(--textHeader);
     /* font-family: Inter;
     font-size: 60px !important;
     font-style: normal;

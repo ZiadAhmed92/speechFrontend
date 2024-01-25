@@ -15,13 +15,49 @@ body{
   --secondary:black;
   --title:black;
   --subTitle:rgb(161 161 170);
+  --header:#ffffff96;
+  --textHeader: black;
 
 }
 .dark{
     --body:black;
     --text:#F3D2F2;
+    --textHeader:#fff6f6;
   --primary:red;
   --secondary:black;
   --title:black;
   --subTitle:rgb(161 161 170);
+  --header: rgba(44, 42, 42, 0.687);
 }
+
+
+
+/* scroll */
+ /* Scroll bar */
+ ::-webkit-scrollbar {
+   width: 0.7rem;
+ }
+
+ ::-webkit-scrollbar-track {
+   border: 7px solid #232943;
+   box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+   border-radius: 2px;
+ }
+
+ ::-webkit-scrollbar-thumb {
+   background: #777;
+   border-radius: 2px;
+ }
+
+ ::-webkit-scrollbar-thumb:hover {
+   background: #888;
+ }
+
+ /* for Firefox */
+ html {
+   scrollbar-color: #9e4673 #3d4a59;
+ }
+
+ html {
+   scroll-behavior: smooth;
+ }

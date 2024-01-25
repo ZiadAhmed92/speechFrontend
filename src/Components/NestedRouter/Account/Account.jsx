@@ -83,7 +83,7 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username'>Name</h3>
           </div>
-          <h3 className='text-capitalize'>{userData?.first_name}</h3>
+          <h3 style={{ color: "var(--textHeader)" }} className='text-capitalize'>{userData?.first_name}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
@@ -93,7 +93,7 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username '>Phone</h3>
           </div>
-          <h3>{userData?.phone}</h3>
+          <h3 style={{color:"var(--textHeader)"}}>{userData?.phone}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
@@ -103,7 +103,7 @@ const Account = () => {
             </svg>
             <h3 className='p-3 username '>Gender</h3>
           </div>
-          <h3 className='text-capitalize'>{userData?.gender}</h3>
+          <h3 style={{ color: "var(--textHeader)" }} className='text-capitalize'>{userData?.gender}</h3>
 
         </div>
         <div>

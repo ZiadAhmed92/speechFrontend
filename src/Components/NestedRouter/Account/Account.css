@@ -29,7 +29,7 @@
     width: 50%;
     padding: 9px;
     border-radius: 15px;
-    background: #A09A9A;
+    background: var(--header);
     margin: auto;
 }
 
