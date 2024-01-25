@@ -5,7 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  height: 100vh;
+
 }
 .logo1 {
   width: 600px;
@@ -14,6 +15,7 @@
 }
 
 .btn-welcome1 {
+
   margin-top: 20px;
   color: #eee;
   width: 160px;
