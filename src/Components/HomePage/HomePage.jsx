@@ -1,5 +1,6 @@
 import * as React from 'react';
 import "./HomePage.css"
+import { useTranslation } from 'react-i18next';//1
 
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -96,6 +97,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 
 export default function Homepage() {
+    const { t, i18n } = useTranslation();//2
+
     let { userData, logOut } = React.useContext(speechContext);
     const [mood, setMood] = React.useState("light")
     // const [mood, setMood] = useState(localStorage.getItem("mode"))
@@ -120,12 +123,13 @@ export default function Homepage() {
     };
 
     const Array1 = [
-        { text: "New record", icon: { icon: <i className="fa-solid fa-microphone"></i>}, path: "" },
-        { text: "Account", icon: { icon: <i className="fa-regular fa-circle-user"></i> }, path: "account" },
-        { text: "History", icon: { icon: <i className="fa-solid fa-clock-rotate-left"></i> }, path: "history" },
-        { text: "Suggestion", icon: { icon: <i className="fa-solid fa-pen-nib"></i> }, path: "suggestion" },
-        { text: "Change Password", icon: { icon: <i className="fa-solid fa-unlock"></i> }, path: "/forgetpasswordsecond" },
-        { text: "Change Language", icon: { icon: <i className="fa-solid fa-language"></i> }, path: "language" },
+        { text: t('New record'), icon: { icon: <i className="fa-solid fa-microphone"></i>}, path: "" },
+        { text: t("Account"), icon: { icon: <i className="fa-regular fa-circle-user"></i> }, path: "account" },
+        { text: t("History"), icon: { icon: <i className="fa-solid fa-clock-rotate-left"></i> }, path: "history" },
+        { text: t("Suggestion"), icon: { icon: <i className="fa-solid fa-pen-nib"></i> }, path: "suggestion" },
+        { text: t("Change Password"), icon: { icon: <i className="fa-solid fa-unlock"></i> }, path: "/forgetpasswordsecond" },
+        { text: t("Change Language"), icon: { icon: <i className="fa-solid fa-language"></i> }, path: "language" },
+        { text: t("About Us"), icon: { icon: <i className="fa-solid fa-people-group"></i> }, path: "aboutus" },
 
     ];
     
@@ -147,8 +151,8 @@ export default function Homepage() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div" style={{color:"var(--textHeader)"}}>
-                        Speech Emotion Recognition
+                    <Typography variant="h6" noWrap component="div" style={{color:"var(--textHeader)"}} className='name_project'>
+                        {t('Speech')}
                     </Typography>
                     <div className='ms-auto' >
                         <label className="theme-switch">
@@ -260,7 +264,7 @@ export default function Homepage() {
                                 <ListItemText
                                     onClick={() => { setOpen(false); logOut() }}
                                     className='sidebar '
-                                    primary={"Log Out"}
+                                    primary={t("Log Out")}
 
                                     sx={{ opacity: open ? 1 : 0 }}
                                 />

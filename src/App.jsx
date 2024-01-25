@@ -20,6 +20,8 @@ import Language from "./Components/NestedRouter/Language/Language"
 import Result from './Components/NestedRouter/Result/Result.jsx'
 import UpdateUser from './Components/NestedRouter/UpdateUser/UpdateUser'
 import ThankYou from './Components/ThankYou/ThankYou'
+import AboutUs from './Components/NestedRouter/AboutUs/AboutUs.jsx'
+
 function App() {
 
   const router = createBrowserRouter([
@@ -38,6 +40,10 @@ function App() {
         {
           path: "",
           element: <Newrecord />,
+        },
+        {
+          path: "aboutus",
+          element: <AboutUs />,
         },
         {
           path: "account",

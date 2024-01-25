@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import stop from "../../../Animation/stop.json"
 import sound from "../../../Animation/sound.json"
+import { useTranslation } from 'react-i18next';//1
 
 const Newrecord = () => {
+  const { t, i18n } = useTranslation();//2
 
   const [stoprecording, setStopRecording] = useState(false);
   const [recording, setRecording] = useState(false);
@@ -33,7 +35,7 @@ const Newrecord = () => {
       setRecording(true);
     } catch (error) {
       console.error('Error accessing microphone:', error);
-      setError("Connect the microphone or allow the browser to play the sound")
+      setError(t("Connect the microphone or allow the browser to play the sound"))
     }
   };
 
@@ -82,7 +84,7 @@ const Newrecord = () => {
   }
   return (
     <div className='parent-record d-flex flex-column align-items-center justify-content-around'>
-      <h4 className='sub-title'>Click the button to start recording or import an audio</h4>
+      <h4 className='sub-title'>{t("Click the button to start recording or import an audio")}</h4>
       <div className='d-flex align-items-center justify-content-center'>
         {/* <img src={img1} onClick={recording ? stopRecording : startRecording} className='record' /> */}
         <div onClick={checkRecord} className='record' ></div>
@@ -90,7 +92,7 @@ const Newrecord = () => {
       </div>
 
       <div>
-        <div className='text-center text-danger'>
+        <div className='fs-3 text-center text-danger'>
           {error}
         </div>
         <div className='parentLottie d-flex align-items-center justify-content-center'>
@@ -114,7 +116,7 @@ const Newrecord = () => {
           </div>
         )}
       </div>
-      <Link to="/homepage/result"><button onClick={handleUpload} className="btn-f-page btn-record"> Show Result</button></Link>
+      <Link to="/homepage/result"><button onClick={handleUpload} className="btn-f-page btn-record"> {t("Show Result")}</button></Link>
     </div>
   )
 }

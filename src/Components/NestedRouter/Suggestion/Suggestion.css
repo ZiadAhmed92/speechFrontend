@@ -1,11 +1,23 @@
 .textarea{
     width: 50%;
     min-height: 300px;
-    border-radius: 50px;
-        border: 6px solid #D05F8E;
-        background: rgba(252, 235, 252, 0.83);
-        caret-color: #D05F8E;
-            text-indent: 30px;
+    border-radius: 5px;
+    background: var(--header);
+    caret-color: #D05F8E;
+    text-indent: 5px;
+    font-size: 1.5em;
+    color: var(--text) ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.suggest-text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+::placeholder{
+    color: var(--text);
 }
 .textarea:focus{
     outline: none;
@@ -13,6 +25,22 @@
 .lottie{
     color: var(--text);
     font-size: 1.5em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.btn-suggestion{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background:#ca4b7f ;
+    border: none;
+    padding: 10px;
+    color: var(--text);
+    width: 120px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin: 10px 0;
+    font-size: 1.3em;
 }
 @media only screen and (max-width: 600px) {
 .textarea {

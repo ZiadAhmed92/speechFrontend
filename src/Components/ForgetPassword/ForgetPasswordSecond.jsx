@@ -5,7 +5,10 @@ import { Link, useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
 import { speechContext } from "../Context/Store.jsx"
 import axios from "axios"
+import { useTranslation } from 'react-i18next';//1
+
 export const ForgetPasswordSecond = () => {
+    const { t, i18n } = useTranslation();//2
     let { userData } = useContext(speechContext);
     let Navigate = useNavigate();
     const [error, setError] = useState("")
@@ -32,13 +35,13 @@ export const ForgetPasswordSecond = () => {
         if (data.message === "success") {
             localStorage.removeItem("Token");
             Navigate("/login");
-        } else{
+        } else {
             setError(data.message)
         }
     }
     function submitPassword(e) {
         e.preventDefault();
-            sendUserData();
+        sendUserData();
     }
 
     return (
@@ -47,22 +50,22 @@ export const ForgetPasswordSecond = () => {
                 <div className="row mt-2">
                     <div className="col-md-6">
                         <Link to="/homepage"><img src={img1} className="img-1-forget" /></Link>
-                        
+
                         <form onSubmit={submitPassword} className="d-flex flex-column gap-2 mt-5 position-relative">
                             <div className="text-danger">{error}</div>
-                            <label htmlFor="forgetPassword" className="label-forget">Old New Password</label>
+                            <label htmlFor="forgetPassword" className="label-forget">{t("Old Password")}</label>
                             <input type={`${type}`} className="input-forget" name="password" onChange={getUserData} />
                             <div className="new-password">
                                 {type == "password" ? <i onClick={() => setType("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
-                            <label htmlFor="forgetPassword" className="label-forget"> New Password</label>
+                            <label htmlFor="forgetPassword" className="label-forget">{t("New Password")}</label>
                             <input type={`${type1}`} className="input-forget" name="confirmPassword" onChange={getUserData} />
                             <div className="confirm-password">
                                 {type1 == "password" ? <i onClick={() => setType1("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType1("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
-                            <button type="submit" className="btn-forget"> Change</button>
+                            <button type="submit" className="btn-forget">{t("Change1")}</button>
 
                         </form>
 
