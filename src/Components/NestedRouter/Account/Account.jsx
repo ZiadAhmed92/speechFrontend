@@ -82,7 +82,24 @@ const Account = () => {
                 </label>
               </form>
             </div>
-          </> : ""}
+          </> : <>
+            <img src={"https://speech-emotion.onrender.com/" + photo} className='logo-account1 rounded-circle' />
+            {/*  */}
+            <div className='upload-photo '>
+              <form id="imageForm" encType="multipart/form-data">
+                <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} onClick={() => { selectedFile ? uploadPhoto() : "" }}>
+                  {t("upload Photo")}
+                  <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/*"
+                    style={{ display: "none" }}
+                    onChange={handleFileChange}
+                  />
+                </label>
+              </form>
+            </div>
+          </>}
         </div>
 
         <div>
