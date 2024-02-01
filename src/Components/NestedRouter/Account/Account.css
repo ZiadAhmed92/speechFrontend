@@ -14,7 +14,8 @@
 }
 
 .logo-account1 {
-    width: 150px;
+    width: 100px;
+    height: 100px;
 
 }
 
@@ -85,6 +86,23 @@
     font-weight: 800;
     line-height: normal;
     cursor: pointer;
+}
+
+/* photo */
+.upload-photo{
+    color: var(--text) !important;
+}
+.parent-photo{
+    cursor: pointer;
+    height: 150px;
+}
+
+.upload-photo:hover{
+    color: blue;
+    font-size: 1.1em;
+}
+.file-img{
+    background-image: none !important;
 }
 
 @media only screen and (max-width: 700px) {

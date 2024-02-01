@@ -33,7 +33,7 @@
     width: 90%;
     border: none;
     margin: auto;
-    height: 67px;
+    height: 60px;
     text-indent: 25px;
     background: #A09A9A;
 }
@@ -91,7 +91,7 @@
 .password-login{
     cursor: pointer;
    position: absolute;
-    top: 110px;
+    top: 100px;
     right: 60px;
 
 }

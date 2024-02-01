@@ -90,7 +90,7 @@ const UpdateUser = () => {
     }
   }
   return (
-    <div className="container register  ">
+    <div className="container register ">
       <div className="row text-center justify-content-center align-items-center">
         <div className="col-md-12 text-start">
           <Link to="/homepage/account"><img src={img1} className="img-1-forget ml-5" /></Link>

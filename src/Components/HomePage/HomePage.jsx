@@ -99,7 +99,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function Homepage() {
     const { t, i18n } = useTranslation();//2
 
-    let { userData, logOut } = React.useContext(speechContext);
+    let { userData, logOut, photo } = React.useContext(speechContext);
     const [mood, setMood] = React.useState("light")
     // const [mood, setMood] = useState(localStorage.getItem("mode"))
     const theme = useTheme();
@@ -212,7 +212,7 @@ export default function Homepage() {
                         transition: "0.25s",
                     }}
                     alt="img"
-                    src={img}
+                    src={"https://speech-emotion.onrender.com/" + photo}
                 />
                 <Typography
                     align="center"

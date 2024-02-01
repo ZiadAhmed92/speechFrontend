@@ -6,6 +6,7 @@ export let speechContext = createContext(0);
 export default function SpeechContextProvider(props) {
   // let { userData, dataUser,logOut } = useContext(speechContext);
   const [userData, setUserdata] = useState(null)
+  const [photo, setPhoto] = useState("")
   function logOut() {
     localStorage.removeItem('Token');
     setUserdata(null) 
@@ -26,7 +27,10 @@ export default function SpeechContextProvider(props) {
       value={{
         logOut,
         dataUser,
-        userData
+        userData,
+        setPhoto,
+        photo
+
       }}
     >
       {props.children}

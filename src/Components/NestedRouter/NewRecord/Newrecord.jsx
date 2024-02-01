@@ -86,7 +86,6 @@ const Newrecord = () => {
     <div className='parent-record d-flex flex-column align-items-center justify-content-around'>
       <h4 className='sub-title'>{t("Click the button to start recording or import an audio")}</h4>
       <div className='d-flex align-items-center justify-content-center'>
-        {/* <img src={img1} onClick={recording ? stopRecording : startRecording} className='record' /> */}
         <div onClick={checkRecord} className='record' ></div>
         <input type="file" accept="audio/*" onChange={handleFileChange} />
       </div>
