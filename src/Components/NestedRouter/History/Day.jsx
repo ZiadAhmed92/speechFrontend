@@ -23,7 +23,7 @@ const Day = () => {
     {
       "id": "Sad",
       "label": "Sad",
-      "value": 48,
+      "value": 40,
 
     }
   ]
