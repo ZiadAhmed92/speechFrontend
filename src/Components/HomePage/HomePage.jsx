@@ -214,14 +214,14 @@ export default function Homepage() {
                     alt="img"
                     src={"https://speech-emotion.onrender.com/" + photo}
                 />
-                <Typography
+                {/* <Typography
                     align="center"
                     sx={{ fontSize: open ? 17 : 0, transition: "0.25s" }}
                     className='text-capitalize'
                     style={{ color: "var(--textHeader)" }}
                 >
                     {userData?.first_name}
-                </Typography>
+                </Typography> */}
                 <Divider />
                 <List>
                     {Array1.map((item) => (

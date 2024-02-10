@@ -11,7 +11,7 @@ import { Language } from '@mui/icons-material'
 const Account = () => {
   const { t, i18n } = useTranslation();//2
   let { userData, setPhoto, photo } = useContext(speechContext);
-  
+
   const [selectedFile, setSelectedFile] = useState(null);
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -34,10 +34,9 @@ const Account = () => {
   let getMyPhoto = async () => {
     try {
       const { data } = await axios.get(`https://speech-emotion.onrender.com/photo/${userData?._id}`)
-      console.log(data)
       if (data.message == "success") {
         setPhoto(data.photo.path)
-
+        console.log(photo)
       }
     } catch (err) {
       console.log(err)
@@ -49,16 +48,15 @@ const Account = () => {
         'Content-Type': 'multipart/form-data'
       }
     })
-      .then(response => {
-        console.log(response.data);
+      .then(async response => {
+        console.log("RES: ", response)
       })
       .catch(error => {
-        console.error( error);
+        console.error(error);
       });
-    }
-  useEffect(() => {
-    getMyPhoto()  
-  }, [])
+    const data = await getMyPhoto()
+    setPhoto(data.photo.path)
+  }
 
   return (
     <div>
@@ -70,14 +68,14 @@ const Account = () => {
             {/*  */}
             <div className='upload-photo '>
               <form id="imageForm" encType="multipart/form-data">
-                <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} onClick={() => { selectedFile ? uploadPhoto():"" }}>
+                <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} onClick={() => { selectedFile ? uploadPhoto() : "" }}>
                   {t("Change Photo")}
                   <input
                     type="file"
                     id="fileInput"
                     accept="image/*"
                     style={{ display: "none" }}
-                    onChange={handleFileChange}  
+                    onChange={handleFileChange}
                   />
                 </label>
               </form>

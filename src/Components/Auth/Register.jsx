@@ -36,7 +36,7 @@ const Register = () => {
         let { data } = await axios.post(`https://speech-emotion.onrender.com/signUp`, user);
         console.log(data)
         if (data.message === "success") {
-            Navigate("/login")
+            Navigate("/login")  
         } else {
             setLoading(false)
             setError(data.errors.email.message)

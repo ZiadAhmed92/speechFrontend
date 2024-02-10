@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <SpeechContextProvider>
       <App />
     </SpeechContextProvider>
-  </React.StrictMode>,
+</React.StrictMode>,
 
 
 )
