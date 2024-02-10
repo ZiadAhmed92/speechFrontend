@@ -36,7 +36,7 @@ const Register = () => {
         let { data } = await axios.post(`https://speech-emotion.onrender.com/signUp`, user);
         console.log(data)
         if (data.message === "success") {
-            Navigate("/login")  
+            Navigate("/login")
         } else {
             setLoading(false)
             setError(data.errors.email.message)
@@ -170,7 +170,7 @@ const Register = () => {
                                 </div>
                                 <input type="email" placeholder="Email " className="input-signup" name='email' onChange={getUserData} />
                                 <div className="text-danger">
-                                    
+
                                     {errorList.filter((item) => item.context.key == "email")[0]?.message}
                                 </div>
                                 <div className="position-relative">

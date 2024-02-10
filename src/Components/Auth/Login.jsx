@@ -23,7 +23,7 @@ const Login = () => {
         setUser(MyUser);
     }
     async function sendUserData() {
-        // http://localhost:3000
+        // https://speech-emotion.onrender.com
         let { data } = await axios.post(
             `https://speech-emotion.onrender.com/signIn`,
             user
@@ -71,7 +71,7 @@ const Login = () => {
                             <div className="input d-flex gap-4 position-relative">
                                 <input type="email" placeholder="Email " className="email" name="email"
                                     onChange={getUserData} />
-                                
+
                                 <input type={`${type}`} placeholder="Password " className="password" name="password"
                                     onChange={getUserData} />
                                 {errorList.map((error, i) => {
@@ -81,12 +81,12 @@ const Login = () => {
                                                 The password is weak and must not be less than five numbers{" "}
                                             </p>
                                         );
-                                    } 
+                                    }
                                 })}
                                 <p className="text-center text-danger">
                                     {error}
                                 </p>
-                                
+
                                 <div className="password-login">
                                     {type == "password" ? <i onClick={() => setType("text")} className="eya fs-3 fa-solid fa-eye"></i>
                                         : <i onClick={() => setType("password")} className="eya fs-3 fa-solid fa-eye-slash"></i>}

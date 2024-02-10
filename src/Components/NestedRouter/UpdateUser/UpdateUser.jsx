@@ -33,7 +33,7 @@ const UpdateUser = () => {
   }
   async function sendUserData() {
     try {
-      let { data } = await axios.put(`http://localhost:3000/update`, user);
+      let { data } = await axios.put(`https://speech-emotion.onrender.com/update`, user);
       if (data.message === "success") {
         Navigate("/login")
         console.log("success")

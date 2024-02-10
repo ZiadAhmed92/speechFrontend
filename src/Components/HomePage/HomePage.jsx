@@ -123,7 +123,7 @@ export default function Homepage() {
     };
 
     const Array1 = [
-        { text: t('New record'), icon: { icon: <i className="fa-solid fa-microphone"></i>}, path: "" },
+        { text: t('New record'), icon: { icon: <i className="fa-solid fa-microphone"></i> }, path: "" },
         { text: t("Account"), icon: { icon: <i className="fa-regular fa-circle-user"></i> }, path: "account" },
         { text: t("History"), icon: { icon: <i className="fa-solid fa-clock-rotate-left"></i> }, path: "history" },
         { text: t("Suggestion"), icon: { icon: <i className="fa-solid fa-pen-nib"></i> }, path: "suggestion" },
@@ -132,8 +132,8 @@ export default function Homepage() {
         { text: t("About Us"), icon: { icon: <i className="fa-solid fa-people-group"></i> }, path: "aboutus" },
 
     ];
-    
-    
+
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -151,7 +151,7 @@ export default function Homepage() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div" style={{color:"var(--textHeader)"}} className='name_project'>
+                    <Typography variant="h6" noWrap component="div" style={{ color: "var(--textHeader)" }} className='name_project'>
                         {t('Speech')}
                     </Typography>
                     <div className='ms-auto' >
@@ -276,8 +276,8 @@ export default function Homepage() {
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
-            <Outlet/>
-                
+                <Outlet />
+
             </Box>
         </Box>
     );

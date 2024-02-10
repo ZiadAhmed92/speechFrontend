@@ -21,7 +21,12 @@ import Result from './Components/NestedRouter/Result/Result.jsx'
 import UpdateUser from './Components/NestedRouter/UpdateUser/UpdateUser'
 import ThankYou from './Components/ThankYou/ThankYou'
 import AboutUs from './Components/NestedRouter/AboutUs/AboutUs.jsx'
-
+import Week from './Components/NestedRouter/History/Week.jsx'
+import Day from './Components/NestedRouter/History/Day.jsx'
+import Month from './Components/NestedRouter/History/Month.jsx'
+import Month2 from "./Components/NestedRouter/History/Month2.jsx"
+import Month3 from "./Components/NestedRouter/History/Month3.jsx"
+import Month1 from './Components/NestedRouter/History/Month1.jsx'
 function App() {
 
   const router = createBrowserRouter([
@@ -52,6 +57,34 @@ function App() {
         {
           path: "history",
           element: <History />,
+          children: [
+            {
+              path: "",
+              element: <Day />,
+            },
+            {
+              path: "week",
+              element: <Week />,
+            },
+            {
+              path: "month",
+              element: <Month />,
+              children: [
+                {
+                  path: "",
+                  element: <Month1 />,
+                },
+                {
+                  path: "month2",
+                  element: <Month2 />,
+                },
+                {
+                  path: "month3",
+                  element: <Month3 />,
+                },
+              ]
+            },
+          ]
         },
         {
           path: "suggestion",
