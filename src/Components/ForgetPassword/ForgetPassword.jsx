@@ -15,7 +15,7 @@ export const ForgetPassword = () => {
     async function sendUserData() {
         try {
             let { data } = await axios.post(
-                `https://speech-emotion.onrender.com/forgot-password`,
+                `http://localhost:3000/forgot-password`,
                 { email }
             );
 

@@ -7,9 +7,12 @@ export default function SpeechContextProvider(props) {
   // let { userData, dataUser,logOut } = useContext(speechContext);
   const [userData, setUserdata] = useState(null)
   const [photo, setPhoto] = useState("")
-  console.log("CONTEXT: ", photo)
+
   function logOut() {
     localStorage.removeItem('Token');
+    localStorage.removeItem("imgCover");
+    localStorage.removeItem("phone");
+    localStorage.removeItem("Gender");
     setUserdata(null)
     return <Navigate to='/login' />
   }

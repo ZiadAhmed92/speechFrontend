@@ -1,0 +1,18 @@
+.user-photo{
+  position: relative;
+  
+}
+.user-photo i{
+  position:absolute;
+  bottom:5px;
+  right: 0;
+  font-size: 1.1em;
+  background: #000;
+  color: aliceblue;
+  padding: 5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}

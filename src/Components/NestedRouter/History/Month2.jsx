@@ -152,7 +152,7 @@ const Month2 = () => {
             "tableCellValue": {}
           }
         }}
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 130, bottom: 100, left: 60 }}
         padding={0.3}
         groupMode="grouped"
         valueScale={{ type: 'linear' }}
@@ -235,13 +235,13 @@ const Month2 = () => {
         legends={[
           {
             dataFrom: 'keys',
-            anchor: 'bottom-right',
-            direction: 'column',
+            anchor: 'bottom',
+            direction: 'row',
             justify: false,
-            translateX: 120,
-            translateY: 0,
+            translateX: 0,
+            translateY: 100,
             itemsSpacing: 2,
-            itemWidth: 100,
+            itemWidth: 65,
             itemHeight: 20,
             itemDirection: 'left-to-right',
             itemOpacity: 0.85,

@@ -15,9 +15,19 @@ const Register = () => {
     const [error, setError] = useState("")
     const [errorList, setErrorList] = useState([])
     const [loading, setLoading] = useState(false)
+    const [selectedFile, setSelectedFile] = useState({});
+    
+
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedFile(file);
+    };
+
+
     const [user, setUser] = useState({
-        first_name: '',
-        last_name: '',
+        firstname: '',
+        lastname: '',
         email: '',
         password: '',
         birthday: "",
@@ -25,16 +35,28 @@ const Register = () => {
         phone: ""
     });
 
+
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+    formData.append('firstname', user.firstname);
+    formData.append('lastname', user.lastname);
+    formData.append('email', user.email);
+    formData.append('password', user.password);
+    formData.append('birthday', user.birthday);
+    formData.append('phone', user.phone);
+    formData.append('gender', user.gender);
+
+
     function getUserData(e) {
         let MyUser = { ...user };
         MyUser[e.target.name] = e.target.value;
         setUser(MyUser)
-
-
     }
+
     async function sendUserData() {
-        let { data } = await axios.post(`https://speech-emotion.onrender.com/signUp`, user);
-        console.log(data)
+        console.log(formData)
+        let { data } = await axios.post(`https://speech-sapm.onrender.com/users/signup`, formData);
+        console.log(data);
         if (data.message === "success") {
             Navigate("/login")
         } else {
@@ -43,21 +65,17 @@ const Register = () => {
 
         }
     }
-
     function validateRegisterForm() {
         let schema = Joi.object({
-            first_name: Joi.string()
-
+            firstname: Joi.string()
                 .min(3)
                 .max(30)
                 .required(),
-            last_name: Joi.string()
-
+            lastname: Joi.string()
                 .min(3)
                 .max(30)
                 .required(),
             gender: Joi.string()
-
                 .min(3)
                 .max(8)
                 .required(),
@@ -74,6 +92,7 @@ const Register = () => {
 
 
     function submitRegister(e) {
+        console.log("first")
         e.preventDefault();
         setLoading(true);
 
@@ -81,9 +100,11 @@ const Register = () => {
         if (validation.error) {
             setErrorList(validation.error.details);
             setLoading(false)
+            console.log("valida")
         }
         else {
             sendUserData();
+            console.log("tmm")
         }
     }
     return (
@@ -103,16 +124,26 @@ const Register = () => {
                             </div>
                         </div>
                         <form onSubmit={submitRegister}>
+                            <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} >
+                                Upload Photo
+                                <input
+                                    type="file"
+                                    id="fileInput"
+                                    accept="image/*"
+                                    style={{ display: "none" }}
+                                    onChange={handleFileChange}
+                                />
+                            </label>
                             <div className="d-flex mt-3">
-                                <input type="text" placeholder="First Name " className="firstName" name='first_name' onChange={getUserData} />
-                                <input type="text" placeholder="Last Name " className="lastName" name='last_name' onChange={getUserData} />
+                                <input type="text" placeholder="First Name " className="firstName" name='firstname' onChange={getUserData} />
+                                <input type="text" placeholder="Last Name " className="lastName" name='lastname' onChange={getUserData} />
                             </div>
                             <div className="text-danger">
                                 {errorList.map((error, i) => {
-                                    if (error.context.label === "first_name") {
+                                    if (error.context.label === "firstname") {
                                         return (
                                             <p key={i} className="text-danger text-capitalize ms-2">
-                                                first_name is not allowed to be empty
+                                                firstname is not allowed to be empty
                                             </p>
                                         );
                                     }
@@ -120,10 +151,10 @@ const Register = () => {
                             </div>
                             <div className="text-danger">
                                 {errorList.map((error, i) => {
-                                    if (error.context.label === "last_name") {
+                                    if (error.context.label === "lastname") {
                                         return (
                                             <p key={i} className="text-danger text-capitalize ms-2">
-                                                last_name is not allowed to be empty
+                                                lastname is not allowed to be empty
                                             </p>
                                         );
                                     }
@@ -192,6 +223,9 @@ const Register = () => {
                                     </div>
                                 </div>
                             </div>
+                            <p className="text-center text-danger">
+                                {error}
+                            </p>
                             <div className="text-center">
                                 <button type="submit" className=" btn-login btn-signUp">{loading ? <i className='fas fa-spinner fa-spin'></i> : 'Sign Up'}</button>
                                 <Link to="/login"><h6 className="text-signup">Already have an account? <br /><span className="sub-title fs-5">Login</span></h6></Link>

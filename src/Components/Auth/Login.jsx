@@ -23,19 +23,30 @@ const Login = () => {
         setUser(MyUser);
     }
     async function sendUserData() {
-        // https://speech-emotion.onrender.com
-        let { data } = await axios.post(
-            `https://speech-emotion.onrender.com/signIn`,
-            user
-        );
-        console.log(data)
-        if (data.message === "login") {
-            localStorage.setItem("Token", data.token);
-
-            Navigate("/firstpage");
-        } else {
+        try{
+            // https://speech-emotion.onrender.com
+            let { data } = await axios.post(
+                `https://speech-sapm.onrender.com/users/signin`,
+                user
+            );
+            console.log(data)
+            if (data.message === "success") {
+                localStorage.setItem("Token", data.token);
+                localStorage.setItem("imgCover", data.user.imgCover);
+                localStorage.setItem("phone", data.user.phone);
+                localStorage.setItem("Gender", data.user.gender);
+                localStorage.setItem("Email", data.user.email);
+                localStorage.setItem("Date", data.user.birthday);
+                localStorage.setItem("FullName", data.user.fullname);
+                localStorage.setItem("FirstName", data.user.firstname);
+                Navigate("/firstpage");
+            } else {
+                setLoading(false);
+                setError(data.message);
+            }
+        }catch(err){
+            setError(err.response.data.message)
             setLoading(false);
-            setError(data.message);
         }
     }
 

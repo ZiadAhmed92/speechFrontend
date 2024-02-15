@@ -11,35 +11,42 @@ export const ForgetPasswordSecond = () => {
     const { t, i18n } = useTranslation();//2
     let { userData } = useContext(speechContext);
     let Navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState("")
     const [type, setType] = useState("password")
     const [type1, setType1] = useState("password")
     const [password, setPassword] = useState({
-        _id: `${userData?._id}`,
-        password: "",
-        confirmPassword: "",
+        oldPassword: "",
+        newPassword: "",
     });
-    // ^(?=.*?[A-Z])?(?=.*?[a-z])(?=.*?[0-9])?(?=.*?[#?!@$%^&*-])?.{5,18}$
+    
     function getUserData(e) {
         let MyUser = { ...password };
         MyUser[e.target.name] = e.target.value;
         setPassword(MyUser);
-        console.log(password)
     }
     async function sendUserData() {
-        let { data } = await axios.put(
-            `https://speech-emotion.onrender.com/updatepassword`,
-            password
-        );
-        console.log(data)
-        if (data.message === "success") {
-            localStorage.removeItem("Token");
-            Navigate("/login");
-        } else {
-            setError(data.message)
+        try{
+            let { data } = await axios.patch(
+                `https://speech-sapm.onrender.com/users`, password, {
+                headers: {
+                    token: `${localStorage.getItem("Token")}`
+                }
+            });
+            if (data.message === "success") {
+                setLoading(false)
+                Navigate("/homepage");
+            } else {
+                setError(data.message)
+                setLoading(false)
+            }
+        }catch(err){
+            setError(err.response.data.message)
+            setLoading(false)
         }
     }
     function submitPassword(e) {
+        setLoading(true)
         e.preventDefault();
         sendUserData();
     }
@@ -54,18 +61,18 @@ export const ForgetPasswordSecond = () => {
                         <form onSubmit={submitPassword} className="d-flex flex-column gap-2 mt-5 position-relative">
                             <div className="text-danger">{error}</div>
                             <label htmlFor="forgetPassword" className="label-forget">{t("Old Password")}</label>
-                            <input type={`${type}`} className="input-forget" name="password" onChange={getUserData} />
+                            <input type={`${type}`} className="input-forget" name="oldPassword" onChange={getUserData} />
                             <div className="new-password">
                                 {type == "password" ? <i onClick={() => setType("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
                             <label htmlFor="forgetPassword" className="label-forget">{t("New Password")}</label>
-                            <input type={`${type1}`} className="input-forget" name="confirmPassword" onChange={getUserData} />
+                            <input type={`${type1}`} className="input-forget" name="newPassword" onChange={getUserData} />
                             <div className="confirm-password">
                                 {type1 == "password" ? <i onClick={() => setType1("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType1("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
-                            <button type="submit" className="btn-forget">{t("Change1")}</button>
+                            <button type="submit" className="btn-forget">{loading ? <i className="fas fa-spinner fa-spin"></i> : t("Change1")}</button>
 
                         </form>
 

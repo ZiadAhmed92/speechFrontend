@@ -3,28 +3,28 @@ import { ResponsiveBar } from '@nivo/bar'
 const Month1 = () => {
   let data = [
     {
-      "Month": "January",
+      "Month": "Jan",
       "Angery": 10,
       "Happy": 20,
       "Sad": 15,
       "Normal": 11,
     },
     {
-      "Month": "February",
+      "Month": "Feb",
       "Angery": 20,
       "Happy": 10,
       "Sad": 20,
       "Normal": 25
     },
     {
-      "Month": "March",
+      "Month": "Mar",
       "Angery": 22,
       "Happy": 33,
       "Sad": 25,
       "Normal": 10,
     },
     {
-      "Month": "April",
+      "Month": "Apr",
       "Angery": 15,
       "Happy": 30,
       "Sad": 20,
@@ -33,7 +33,7 @@ const Month1 = () => {
     }
   ]
   return (
-    <div className='parent-charts'>
+    <div className='parent-charts '>
       <ResponsiveBar
         data={data}
         keys={[
@@ -151,7 +151,7 @@ const Month1 = () => {
             "tableCellValue": {}
           }
         }}
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 130, bottom:100, left: 60 }}
         padding={0.3}
         groupMode="grouped"
         valueScale={{ type: 'linear' }}
@@ -234,14 +234,14 @@ const Month1 = () => {
         legends={[
           {
             dataFrom: 'keys',
-            anchor: 'bottom-right',
-            direction: 'column',
+            anchor: 'bottom',
+            direction: 'row',
             justify: false,
-            translateX: 120,
-            translateY: 0,
+            translateX: 0,
+            translateY: 100,
             itemsSpacing: 2,
-            itemWidth: 100,
-            itemHeight: 20,
+            itemWidth: 65,
+            itemHeight: 70,
             itemDirection: 'left-to-right',
             itemOpacity: 0.85,
             symbolSize: 20,

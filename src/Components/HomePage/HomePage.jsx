@@ -23,7 +23,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { speechContext } from '../Context/Store.jsx';
 import { Link, Outlet } from 'react-router-dom';
-import img from "../../image/forgetPassword.png"
+import user from "../../image/user.png"
 import { Avatar } from '@mui/material';
 
 const drawerWidth = 240;
@@ -202,18 +202,33 @@ export default function Homepage() {
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </DrawerHeader>
-                <Avatar
-                    sx={{
-                        mx: "auto",
-                        width: open ? 88 : 44,
-                        height: open ? 88 : 44,
-                        my: 1,
-                        border: "2px solid grey",
-                        transition: "0.25s",
-                    }}
-                    alt="img"
-                    src={"https://speech-emotion.onrender.com/" + photo}
-                />
+                
+                {
+                    localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ? 
+                    <Avatar
+                        sx={{
+                            mx: "auto",
+                            width: open ? 88 : 44,
+                            height: open ? 88 : 44,
+                            my: 1,
+                            border: "2px solid grey",
+                            transition: "0.25s",
+                        }}
+                        alt="img"
+                            src={user}
+                    /> : <Avatar
+                        sx={{
+                            mx: "auto",
+                            width: open ? 88 : 44,
+                            height: open ? 88 : 44,
+                            my: 1,
+                            border: "2px solid grey",
+                            transition: "0.25s",
+                        }}
+                        alt="img"
+                        src={localStorage.getItem("imgCover")}
+                    />
+                }
                 {/* <Typography
                     align="center"
                     sx={{ fontSize: open ? 17 : 0, transition: "0.25s" }}
