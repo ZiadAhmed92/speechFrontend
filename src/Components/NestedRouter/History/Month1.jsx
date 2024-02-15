@@ -35,6 +35,7 @@ const Month1 = () => {
   return (
     <div className='parent-charts '>
       <ResponsiveBar
+      className="w-100"
         data={data}
         keys={[
           'Angery',

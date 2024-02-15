@@ -3,28 +3,28 @@ import { ResponsiveBar } from '@nivo/bar'
 const Week = () => {
   let data = [
     {
-      "Week": "Sunday",
+      "Week": "Sun",
       "Angery": 10,
       "Happy": 20,
       "Sad": 15,
       "Normal": 11,
     },
     {
-      "Week": "Monday",
+      "Week": "Mon",
       "Angery": 20,
       "Happy": 10,
       "Sad": 20,
       "Normal": 25
     },
     {
-      "Week": "Tuesday",
+      "Week": "Tue",
       "Angery": 22,
       "Happy": 33,
       "Sad": 25,
       "Normal": 10,
     },
     {
-      "Week": "Wednesday",
+      "Week": "Wed",
       "Angery": 15,
       "Happy": 30,
       "Sad": 20,
@@ -32,14 +32,14 @@ const Week = () => {
 
     },
     {
-      "Week": "Thursday",
+      "Week": "Thu",
       "Angery": 12,
       "Happy": 10,
       "Sad": 15,
       "Normal": 20,
     },
     {
-      "Week": "Friday",
+      "Week": "Fri",
       "Angery": 21,
       "Happy": 17,
       "Sad": 20,
@@ -47,7 +47,7 @@ const Week = () => {
 
     },
     {
-      "Week": "Saturday",
+      "Week": "Sat",
       "Angery": 15,
       "Happy": 21,
       "Sad": 30,
@@ -173,7 +173,7 @@ const Week = () => {
             "tableCellValue": {}
           }
         }}
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 130, bottom:100, left: 60 }}
         padding={0.3}
         groupMode="grouped"
         valueScale={{ type: 'linear' }}
@@ -256,13 +256,13 @@ const Week = () => {
         legends={[
           {
             dataFrom: 'keys',
-            anchor: 'bottom-right',
-            direction: 'column',
+            anchor: 'bottom',
+            direction: 'row',
             justify: false,
-            translateX: 120,
-            translateY: 0,
+            translateX: 0,
+            translateY: 100,
             itemsSpacing: 2,
-            itemWidth: 100,
+            itemWidth: 65,
             itemHeight: 20,
             itemDirection: 'left-to-right',
             itemOpacity: 0.85,

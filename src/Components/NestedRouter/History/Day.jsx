@@ -28,7 +28,7 @@ const Day = () => {
     }
   ]
   return (
-    <div className='parent-charts'>
+    <div className='parent-charts-day'>
       <ResponsivePie
         data={data2}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
