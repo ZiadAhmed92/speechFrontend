@@ -1,0 +1,42 @@
+.parent-resend-email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-resend-email {
+  color: var(--text);
+  padding: 1px 10px;
+}
+
+.email-resend {
+  margin: auto;
+  width: 30%;
+  height: 30%;
+}
+
+.btn-resend-email {
+  background: #F3A5D4;
+  padding: 10px 20px;
+  width: 30%;
+  border: none;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+  .email-resend {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-resend-email {
+
+    width: 80%;
+
+  }
+}

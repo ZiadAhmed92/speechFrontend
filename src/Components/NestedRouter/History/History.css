@@ -1,7 +1,7 @@
 .parent-charts {
   height: 630px;
-   width:100%;
-    margin:auto
+   width:80%;
+   margin: auto;
 }
 .parent-charts-day {
   height: 630px;
@@ -18,8 +18,6 @@
 .parent-charts-day {
     height: 620px;
     width:100% !important ;
-  
-     
   }
 
 }

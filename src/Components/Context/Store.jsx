@@ -13,6 +13,10 @@ export default function SpeechContextProvider(props) {
     localStorage.removeItem("imgCover");
     localStorage.removeItem("phone");
     localStorage.removeItem("Gender");
+    localStorage.removeItem("Email");
+    localStorage.removeItem("Date");
+    localStorage.removeItem("FullName");
+    localStorage.removeItem("FirstName");
     setUserdata(null)
     return <Navigate to='/login' />
   }

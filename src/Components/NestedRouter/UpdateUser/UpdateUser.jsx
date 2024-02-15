@@ -62,6 +62,8 @@ const UpdateUser = () => {
       localStorage.setItem("Gender", data.newUpdate.gender);
       localStorage.setItem("Email", data.newUpdate.email);
       localStorage.setItem("Date", data.newUpdate.birthday);
+      localStorage.setItem("FirstName", data.newUpdate.firstname);
+      localStorage.setItem("FullName", data.newUpdate.fullname);
       console.log(data)
       setLoading(false)
       Navigate("/homepage/account")

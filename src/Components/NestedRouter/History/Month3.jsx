@@ -60,7 +60,7 @@ const Month3 = () => {
             "legend": {
               "text": {
                 "fontSize": 12,
-                "fill": "red",
+                "fill": "var(--text)",
                 "outlineWidth": 0,
                 "outlineColor": "transparent"
               }
@@ -72,7 +72,7 @@ const Month3 = () => {
               },
               "text": {
                 "fontSize": 11,
-                "fill": "red",
+                "fill": "var(--text)",
                 "outlineWidth": 0,
                 "outlineColor": "transparent"
               }
@@ -95,7 +95,7 @@ const Month3 = () => {
             },
             "text": {
               "fontSize": 11,
-              "fill": "red",
+              "fill": "var(--text)",
               "outlineWidth": 0,
               "outlineColor": "transparent"
             },

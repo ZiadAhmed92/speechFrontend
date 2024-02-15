@@ -83,7 +83,7 @@ const Week = () => {
             "legend": {
               "text": {
                 "fontSize": 12,
-                "fill": "red",
+                "fill": "var(--text)",
                 "outlineWidth": 0,
                 "outlineColor": "transparent"
               }
@@ -95,7 +95,7 @@ const Week = () => {
               },
               "text": {
                 "fontSize": 10,
-                "fill": "red",
+                "fill": "var(--text)",
                 "outlineWidth": 0,
                 "outlineColor": "transparent"
               }
@@ -118,7 +118,7 @@ const Week = () => {
             },
             "text": {
               "fontSize": 11,
-              "fill": "red",
+              "fill": "var(--text)",
               "outlineWidth": 0,
               "outlineColor": "transparent"
             },
@@ -173,7 +173,7 @@ const Week = () => {
             "tableCellValue": {}
           }
         }}
-        margin={{ top: 50, right: 130, bottom:100, left: 60 }}
+        margin={{ top: 50, right: 130, bottom: 100, left: 60 }}
         padding={0.3}
         groupMode="grouped"
         valueScale={{ type: 'linear' }}
@@ -280,6 +280,7 @@ const Week = () => {
         role="application"
         ariaLabel="Nivo bar chart demo"
         barAriaLabel={e => e.id + ": " + e.formattedValue + " in Week: " + e.indexValue}
+        responsive={true}
       />
     </div>
   )

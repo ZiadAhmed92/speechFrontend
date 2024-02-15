@@ -2,7 +2,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import {RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import WelcomeThird from './Components/Welcome/WelcomeThird'
 import WelcomeFirst from './Components/Welcome/WelcomeFirst'
 import WelcomeSecond from './Components/Welcome/WelcomeSecond'
@@ -28,6 +28,8 @@ import Month2 from "./Components/NestedRouter/History/Month2.jsx"
 import Month3 from "./Components/NestedRouter/History/Month3.jsx"
 import Month1 from './Components/NestedRouter/History/Month1.jsx'
 import ResetPassword from './Components/ForgetPassword/ResetPassword.jsx'
+import { useEffect } from 'react'
+import ResetSendEmail from './Components/ResetSendEmail/ResetSendEmail.jsx'
 function App() {
 
   const router = createBrowserRouter([
@@ -38,6 +40,10 @@ function App() {
     {
       path: "/resetPassword",
       element: <ResetPassword />,
+    },
+    {
+      path: "/resetSendEmail",
+      element: <ResetSendEmail />,
     },
     {
       path: "/welcomesecond",
@@ -57,7 +63,7 @@ function App() {
         },
         {
           path: "account",
-          element: <Account/>,
+          element: <Account />,
         },
         {
           path: "history",
