@@ -94,7 +94,7 @@ const Week = () => {
                 "strokeWidth": 1
               },
               "text": {
-                "fontSize": 11,
+                "fontSize": 10,
                 "fill": "red",
                 "outlineWidth": 0,
                 "outlineColor": "transparent"
