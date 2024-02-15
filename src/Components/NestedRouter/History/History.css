@@ -12,12 +12,13 @@
 
 .parent-charts {
     height: 620px;
-    width: 500px !important ;
+    width: 100% !important ;
     
   }
 .parent-charts-day {
     height: 620px;
-    width:80% !important ;
+    width:100% !important ;
+  
      
   }
 
