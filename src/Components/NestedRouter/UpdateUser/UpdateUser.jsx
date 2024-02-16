@@ -15,11 +15,20 @@ const UpdateUser = () => {
   const [loading, setLoading] = useState(false)
   const [selectedFile, setSelectedFile] = useState({});
 
+  const [imgTest, setImgTest] = useState(null);
+
 
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImgTest(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
 
@@ -116,21 +125,24 @@ const UpdateUser = () => {
   return (
 
     <div className="container register ">
+      <div className="pt-4">
+        <Link to="/homepage/account"><i className=" fa-solid fa-arrow-left" style={{ color: "var(--text)", fontSize: "1.5em" }}></i></Link>
+        {/* <h6 >Update Data</h6> */}
+      </div>
       <div className="row text-center justify-content-center align-items-center">
         <div className="col-md-6 ">
 
-          <div className="d-flex align-items-center gap-5">
-            <Link to="/homepage/account"><i className=" fa-solid fa-arrow-left" style={{ color: "var(--text)", fontSize: "1.5em" }}></i></Link>
-            {/* <h6 >Update Data</h6> */}
-          </div>
+
           <form onSubmit={submitRegister}>
+
             <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} >
               <div className="user-photo">
                 <i className="fa-solid fa-pen"></i>
-                {
-                  localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ? < img src={img1} className='logo-account1 rounded-circle' /> : <img src={localStorage.getItem("imgCover")} className='logo-account1 rounded-circle' />
-                }
-              </div>
+                {imgTest ? (
+                  <img src={imgTest} className='logo-account1 rounded-circle' />
+                ) : (
+                  <img src={localStorage.getItem("imgCover")} className='logo-account1 rounded-circle' />
+                )}                                </div>
               <input
                 type="file"
                 id="fileInput"

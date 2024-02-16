@@ -40,7 +40,7 @@ const Account = () => {
 
   return (
     <div>
-      <h2 className=' py-3 ' style={{ color: "#EF5794" }}>{t("Account1")}</h2>
+      <h2 className='fontfamily py-3 ' style={{ color: "#EF5794" }}>{t("Account1")}</h2>
       <div className='parent-account my-3 d-flex align-items-center justify-content-between p-2'>
 
         {
@@ -51,9 +51,9 @@ const Account = () => {
 
 
         <div>
-          <h2 className='username'>{t("UserName")} </h2>
+          <h2 className='username fontfamily'>{t("UserName")} </h2>
           <br />
-          <h6 className='username sub-title name text-capitalize'>{localStorage.getItem("FullName")}</h6>
+          <h6 className='username  sub-title name text-capitalize'>{localStorage.getItem("FullName")}</h6>
         </div>
       </div>
       <div className='details'>
@@ -61,26 +61,26 @@ const Account = () => {
           <div className='d-flex align-items-center justify-content-center'>
 
             <i className="fa-solid fa-user logo-account"></i>
-            <h3 className='p-3 username'>{t("Name")}</h3>
+            <h3 className='p-3 username fontfamily'>{t("Name")}</h3>
           </div>
-          <h3 style={{ color: "var(--textHeader)" }} className='username text-capitalize'>{localStorage.getItem("FirstName")}</h3>
+          <h3 style={{ color: "var(--textHeader)" }} className='username fontfamily text-capitalize'>{localStorage.getItem("FirstName")}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
           <div className='d-flex align-items-center justify-content-center'>
 
             <i className="fa-solid fa-phone logo-account"></i>
-            <h3 className='p-3 username '>{t("Phone")}</h3>
+            <h3 className='p-3 username fontfamily'>{t("Phone")}</h3>
           </div>
-          <h3 className='phone' style={{ color: "var(--textHeader)" }}>{localStorage.getItem("phone")}</h3>
+          <h3 className='phone fontfamily' style={{ color: "var(--textHeader)" }}>{localStorage.getItem("phone")}</h3>
 
         </div>
         <div className='d-flex align-items-center justify-content-between'>
           <div className='d-flex align-items-center justify-content-center'>
             <i className="fa-solid fa-venus-mars logo-account"></i>
-            <h3 className='p-3 username '>{t("Gender")}</h3>
+            <h3 className='p-3 username fontfamily'>{t("Gender")}</h3>
           </div>
-          <h3 style={{ color: "var(--textHeader)" }} className='text-capitalize username'>{localStorage.getItem("Gender")}</h3>
+          <h3 style={{ color: "var(--textHeader)" }} className='text-capitalize username fontfamily'>{localStorage.getItem("Gender")}</h3>
 
         </div>
         <div>
