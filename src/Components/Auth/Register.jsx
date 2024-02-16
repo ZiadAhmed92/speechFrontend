@@ -66,7 +66,7 @@ const Register = () => {
         );
         console.log(data);
         if (data.message === "success") {
-            Navigate("/login");
+            Navigate("/resetSendEmail");
         } else {
             setLoading(false);
             setError(data.errors.email.message);
