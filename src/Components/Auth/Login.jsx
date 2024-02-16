@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import signin from "../../image/SignIn2.png";
+import signIn from "../../image/signin.png";
 import "./Auth.css";
 import axios from "axios";
 import joi from "joi";
@@ -153,7 +153,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="col-md-6 img-parent">
-                    <img src={signin} className="img-login w-100" />
+                    <img src={signIn} className="img-login w-100" />
                 </div>
             </div>
         </div>
