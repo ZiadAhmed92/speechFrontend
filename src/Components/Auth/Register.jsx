@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo1 from "../../image/signIn2.png";
+import logo1 from "../../image/signin.png";
 import { useNavigate } from "react-router-dom";
 import img1 from "../../image/user.png"
 import "./Auth.css";

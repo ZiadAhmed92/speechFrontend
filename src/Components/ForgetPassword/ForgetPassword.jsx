@@ -1,6 +1,6 @@
 import "./ForgetPassword.css";
 import img1 from "../../image/backPage.png";
-import img2 from "../../image/Animation - 1706641322970.json";
+import think from "../../Animation/think.json";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -59,7 +59,7 @@ export const ForgetPassword = () => {
                             <p className="text-start text-capitalize text-danger ">{error}</p>
                             <p className="text-start text-capitalize  text-info">{message}</p>
                             <div className="media-desktop mb-3">
-                                <Lottie animationData={img2} />
+                                <Lottie animationData={think} />
                             </div>
                             <input
                                 type="email"
@@ -77,7 +77,7 @@ export const ForgetPassword = () => {
                         </form>
                     </div>
                     <div className="col-md-6 media-mobile">
-                        <Lottie animationData={img2} />
+                        <Lottie animationData={think} />
                     </div>
                 </div>
             </div>
