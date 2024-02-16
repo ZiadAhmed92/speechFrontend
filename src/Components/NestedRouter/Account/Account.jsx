@@ -5,10 +5,12 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';//1
 import { Language } from '@mui/icons-material'
+import { speechContext } from '../../Context/Store.jsx'
 
 const Account = () => {
   const { t, i18n } = useTranslation();//2
   let Navigate = useNavigate();
+  let { handleAlert } = useContext(speechContext);
   let deleteAccount = async () => {
     try {
       const { data } = await axios.delete(`https://speech-sapm.onrender.com/users/delete`, {
@@ -17,10 +19,18 @@ const Account = () => {
         }
       })
       if (data.message == 'Account Deleted .') {
-        Navigate("/firstpage");
+        localStorage.removeItem('Token');
+        localStorage.removeItem("imgCover");
+        localStorage.removeItem("phone");
+        localStorage.removeItem("Gender");
+        localStorage.removeItem("Email");
+        localStorage.removeItem("Date");
+        localStorage.removeItem("FullName");
+        localStorage.removeItem("FirstName");
+        Navigate("/login");
       }
-      
-      
+
+
     } catch (err) {
       console.log(err)
     }
@@ -32,14 +42,14 @@ const Account = () => {
     <div>
       <h2 className=' py-3 ' style={{ color: "#EF5794" }}>{t("Account1")}</h2>
       <div className='parent-account my-3 d-flex align-items-center justify-content-between p-2'>
-        
+
         {
-          localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ? < img src={img1} className='logo-account1 rounded-circle' />: <img src={localStorage.getItem("imgCover")} className='logo-account1 rounded-circle' />
+          localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ? < img src={img1} className='logo-account1 rounded-circle' /> : <img src={localStorage.getItem("imgCover")} className='logo-account1 rounded-circle' />
         }
-        
 
 
-      
+
+
         <div>
           <h2 className='username'>{t("UserName")} </h2>
           <br />
@@ -80,8 +90,8 @@ const Account = () => {
             <Link to="/update"><span className='btn-account'> {t("Change Account Info")}</span></Link>
           </div>
           <div className='between d-flex  justify-content-center gap-4 my-4'>
-            <i className="img-account fa-solid fa-trash-can " onClick={deleteAccount}></i>
-            <p className='text-account username' onClick={deleteAccount}>{t("Delete my Account")}</p>
+            <i className="img-account fa-solid fa-trash-can " onClick={() => handleAlert(deleteAccount)}></i>
+            <p className='text-account username' onClick={() => handleAlert(deleteAccount)}>{t("Delete my Account")}</p>
           </div>
         </div>
 

@@ -1,3 +1,4 @@
+
 *{
   
   a{
@@ -6,6 +7,8 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+
 }
 body{
   background-color: var(--body) !important ;
@@ -63,4 +66,7 @@ body{
 
  html {
    scroll-behavior: smooth;
+ }
+ .fontfamily{
+  font-family:"Protest Riot", sans-serif !important;;
  }

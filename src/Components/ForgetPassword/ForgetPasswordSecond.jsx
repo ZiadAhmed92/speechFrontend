@@ -19,14 +19,14 @@ export const ForgetPasswordSecond = () => {
         oldPassword: "",
         newPassword: "",
     });
-    
+
     function getUserData(e) {
         let MyUser = { ...password };
         MyUser[e.target.name] = e.target.value;
         setPassword(MyUser);
     }
     async function sendUserData() {
-        try{
+        try {
             let { data } = await axios.patch(
                 `https://speech-sapm.onrender.com/users`, password, {
                 headers: {
@@ -40,21 +40,21 @@ export const ForgetPasswordSecond = () => {
                 setError(data.message)
                 setLoading(false)
             }
-        }catch(err){
+        } catch (err) {
             setError(err.response.data.message)
             setLoading(false)
         }
     }
     function submitPassword(e) {
-        setLoading(true)
         e.preventDefault();
+        setLoading(true)
         sendUserData();
     }
 
     return (
         <div>
             <div className="container pt-2">
-                <div className="row mt-2">
+                <div className="row mt-2 ">
                     <div className="col-md-6">
                         <Link to="/homepage"><img src={img1} className="img-1-forget" /></Link>
 
@@ -72,7 +72,7 @@ export const ForgetPasswordSecond = () => {
                                 {type1 == "password" ? <i onClick={() => setType1("text")} className="eya fs-4 fa-solid fa-eye"></i>
                                     : <i onClick={() => setType1("password")} className="eya fs-4 fa-solid fa-eye-slash"></i>}
                             </div>
-                            <button type="submit" className="btn-forget">{loading ? <i className="fas fa-spinner fa-spin"></i> : t("Change1")}</button>
+                            <button type="submit" className="btn-forget" style={{ background: "#ba68C8" }}>{loading ? <i className="fas fa-spinner fa-spin"></i> : t("Change1")}</button>
 
                         </form>
 

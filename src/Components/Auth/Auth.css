@@ -8,8 +8,8 @@
 
 
 .login {
-    color: #8C85C8;
-    font-family: Adamina;
+    color: black;
+    font-family: "Protest Riot", sans-serif !important;
     font-size: 55px;
     font-style: normal;
     font-weight: 400;
@@ -33,25 +33,25 @@
     width: 90%;
     border: none;
     margin: auto;
-    height: 60px;
+    height: 67px;
     text-indent: 25px;
     background: #A09A9A;
 }
 
 .email {
-    border-radius: 50px 50px 0px 0px;
-    -webkit-border-radius: 50px 50px 0px 0px;
-    -moz-border-radius: 50px 50px 0px 0px;
-    -ms-border-radius: 50px 50px 0px 0px;
-    -o-border-radius: 50px 50px 0px 0px;
+    border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -ms-border-radius: 50px 50px 50px 50px;
+    -o-border-radius: 50px 50px 50px 50px;
 }
 
 .password {
-    border-radius: 0px 0px 50px 50px;
-    -webkit-border-radius: 0px 0px 50px 50px;
-    -moz-border-radius: 0px 0px 50px 50px;
-    -ms-border-radius: 0px 0px 50px 50px;
-    -o-border-radius: 0px 0px 50px 50px;
+    border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -ms-border-radius: 50px 50px 50px 50px;
+    -o-border-radius: 50px 50px 50px 50px;
 }
 
 .icon-password {
@@ -67,15 +67,15 @@
 .btn-login {
     color: #FFF;
     text-align: center;
-    font-family: Adamina;
+font-family: "Protest Riot", sans-serif !important;
     border: none;
     font-size: 20px;
     width: 150px;
     padding: 10px;
     font-weight: 400;
     line-height: normal;
-    border-radius: 50px 50px 0px 0px;
-    background: #F3A5D4;
+    border-radius: 50px;
+    background: #dc0b62;
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.35);
 }
 
@@ -88,24 +88,30 @@
 .logo-login {
     width: 50px;
 }
-.password-login{
+
+.password-login {
     cursor: pointer;
-   position: absolute;
-    top: 100px;
+    position: absolute;
+    top: 110px;
     right: 60px;
 
 }
-.row-login{
-height: 100vh;
+
+.row-login {
+    height: 100vh;
+    align-items: center;
 }
+
 @media only screen and (max-width: 769px) {
     .password-login {
-            right: 35px;
-    
-        }
+        right: 35px;
+
+    }
+
     .row-login {
-            height: fit-content;
-        }
+        height: fit-content;
+    }
+
     .row-login {
         flex-direction: column-reverse !important;
 
@@ -137,15 +143,15 @@ height: 100vh;
 /* Register */
 .register {
     height: 100vh;
-    padding-top: 10px;
+    
 
 }
 
 .text-signUp {
-    color: #8C85C8;
-    font-family: "La Belle Aurore";
+    font-family: "Protest Riot", sans-serif !important;
     font-size: 30px;
     font-weight: 400;
+    padding-bottom: 10px;
 }
 
 .logo2 {
@@ -155,7 +161,7 @@ height: 100vh;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     width: 85px;
-     height: 85px;
+    height: 85px;
     flex-shrink: 0;
 }
 
@@ -164,16 +170,17 @@ height: 100vh;
 }
 
 .firstName {
-    border-radius: 25px 0px 0px 0px;
+    border-radius: 20px;
     width: 47%;
 }
 
 .lastName {
-    border-radius: 0px 25px 0px 0px;
+    border-radius: 20px;
     width: 47%;
 }
 
 .input-signup {
+    border-radius: 20px;
     background: rgb(217, 217, 217);
     border: none;
     padding: 8px;
@@ -196,7 +203,7 @@ height: 100vh;
 }
 
 .btn-signUp {
-    background: #8C85C8 !important;
+    background: #dc0b62 !important;
     margin: 10px 0;
 }
 
@@ -210,13 +217,14 @@ height: 100vh;
     }
 
     .text-signUp {
-        font-size: 40px;
+        font-size: 20px;
         text-align: center;
     }
-   .register {
-    margin-top: 10px;
-       height: fit-content;
-       padding-top: 10px;
 
-   }
+    .register {
+        margin-top: 10px;
+        height: fit-content;
+        padding-top: 10px;
+
+    }
 }

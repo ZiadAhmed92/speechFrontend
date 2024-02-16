@@ -24,7 +24,6 @@ const ResetPassword = () => {
     e.preventDefault();
     setLoading(true);
     resetPassword();
-
   }
 
 

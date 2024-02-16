@@ -1,5 +1,9 @@
 .tex2{
   font-size:50px;
+
+}
+.card-text,.card-title,.tex2{
+    font-family: "Protest Riot", sans-serif !important;
 }
 @media only screen and (max-width: 600px) {
   .aboutUS {

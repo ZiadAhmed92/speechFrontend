@@ -16,15 +16,15 @@ const Language = () => {
 
   return (
     <div>
-      <h2 className='py-3 fs-2' style={{ color: "#C41D6B" }}>{t('Language')}</h2>
-      <div className='mt-5 d-flex flex-column align-items-center gap-2'>
-        <h6 className='fs-5' style={{ color: "#C41D6B" }}>{t('choose')}</h6>
+      <h2 className='py-3 fs-2 fontfamily' style={{ color: "#dc0b62" }}>{t('Language')}</h2>
+      <div className='mt-5 d-flex flex-column align-items-center gap-2 fontfamily'>
+        <h6 className='fs-5 fontfamily' style={{ color: "#dc0b62" }}>{t('choose')}</h6>
         <div className='details p-5'>
           <select id="gender" className="input-signup curser-pointer my-2">
-            <option value="ar" className="male">{t('arabic')}</option>
-            <option value="en" className="male">{t('english')}</option>
+            <option value="ar" className="male fontfamily">{t('arabic')}</option>
+            <option value="en" className="male fontfamily">{t('english')}</option>
           </select>
-          <button className='btn w-100 mt-5' style={{ background: "#c41d6b", color: "var(--text)" }} onClick={handleLanguageChange}>{t('change')}</button>
+          <button className='btn w-100 mt-5 fontfamily' style={{ background: "#dc0b62", color: "var(--text)" }} onClick={handleLanguageChange}>{t('change')}</button>
         </div>
       </div>
     </div>

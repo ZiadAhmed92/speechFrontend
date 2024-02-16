@@ -1,5 +1,6 @@
 /* welcome 1 */
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,300;1,900&family=Leckerli+One&family=Scheherazade+New:wght@400;700&display=swap");
+
 .welcome1 {
   display: flex;
   flex-direction: column;
@@ -8,10 +9,11 @@
   height: 100vh;
 
 }
+
 .logo1 {
-  width: 600px;
+  /* width: 600px; */
   height: 300px;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 
 .btn-welcome1 {
@@ -26,33 +28,36 @@
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
   border: none;
-  background: #ca4b7f;
+  background: #dc0b62;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.35);
   color: #fff;
-  font-family: Adamina;
+  font-family: "Protest Riot",sans-serif !important;
   font-size: 1.5em;
   font-weight: 400;
 }
+
 .paragraph-welcome1 h2 {
-  color: #ca4b7f;
-  font-family: "Leckerli One";
+  color: #dc0b62;
+font-family: "Protest Riot", sans-serif !important;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-align: center;
 }
+
 .paragraph-welcome1 h6 {
   color: var(--text);
-  font-family: Adamina;
+  font-family: "Protest Riot",sans-serif !important;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
+
 .sub-title {
-  color: #8c85c8;
-  font-family: Adamina;
+  color: #dc0b62;
+  font-family: "Protest Riot",sans-serif !important;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -64,18 +69,23 @@
     width: 100%;
     height: 300px;
   }
-  .paragraph-welcome1{
+
+  .paragraph-welcome1 {
     width: 90% !important;
   }
+
   .paragraph-welcome1 h2 {
     font-size: 35px;
   }
+
   .paragraph-welcome1 h6 {
     font-size: 18px;
   }
+
   .sub-title {
     font-size: 18px;
   }
+
   .btn-welcome1 {
     margin-top: 20px;
     color: #eee;
@@ -85,15 +95,6 @@
 }
 
 /* welcome 2 */
-.text-wel2{
-    color: #FF7869 !important;
+.text-wel2 {
+  color: #FF7869 !important;
 }
-
-
-
-
-
-
-
-
-

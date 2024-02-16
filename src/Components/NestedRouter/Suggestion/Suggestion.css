@@ -11,10 +11,10 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Protest Riot",sans-serif !important;
 }
 .suggest-text{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Protest Riot",sans-serif !important;
 }
 ::placeholder{
     color: var(--text);
@@ -25,10 +25,10 @@
 .lottie{
     color: var(--text);
     font-size: 1.5em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Protest Riot",sans-serif !important;
 }
 .btn-suggestion{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Protest Riot",sans-serif !important;
     background:#ca4b7f ;
     border: none;
     padding: 10px;

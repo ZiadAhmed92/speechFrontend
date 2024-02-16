@@ -3,7 +3,7 @@
     align-items: center;
     background: var(--body);
     color: #D287C7;
-    font-family: "La Belle Aurore";
+font-family: "Protest Riot", sans-serif !important;
     font-size: 70px;
     font-style: normal;
     font-weight: 400;
@@ -33,7 +33,7 @@
 .btn-f-page {
     color: var(--body);
     text-align: center;
-    font-family: Adamina;
+    font-family: "Protest Riot", sans-serif !important;
     font-size: 40px;
     padding: 5px 15px;
     font-style: normal;

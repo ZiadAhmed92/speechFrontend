@@ -56,13 +56,14 @@ const UpdateUser = () => {
       }
     });
     if (data.message === "success") {
-    console.log("Good")
+      console.log("Good")
       localStorage.setItem("imgCover", data.newUpdate.imgCover);
       localStorage.setItem("phone", data.newUpdate.phone);
       localStorage.setItem("Gender", data.newUpdate.gender);
       localStorage.setItem("Email", data.newUpdate.email);
       localStorage.setItem("Date", data.newUpdate.birthday);
       localStorage.setItem("FirstName", data.newUpdate.firstname);
+      localStorage.setItem("LastName", data.newUpdate.lastname);
       localStorage.setItem("FullName", data.newUpdate.fullname);
       console.log(data)
       setLoading(false)
@@ -78,27 +79,27 @@ const UpdateUser = () => {
       firstname: Joi.string()
         .min(3)
         .max(30)
-        ,
+      ,
       lastname: Joi.string()
         .min(3)
         .max(30)
-        ,
+      ,
       gender: Joi.string()
         .min(3)
         .max(8)
-        ,
+      ,
       phone: Joi.string().regex(/^(002)?01[0125][0-9]{8}$/),
       birthday: Joi.string(),
       email: Joi.string()
         .email({ tlds: { allow: false } }),
-    
+
     })
     return schema.validate(user, { abortEarly: false })
   }
 
 
   function submitRegister(e) {
-  
+
     e.preventDefault();
     setLoading(true);
 
@@ -109,126 +110,126 @@ const UpdateUser = () => {
     }
     else {
       sendUserData();
-    
+
     }
   }
   return (
-    
+
     <div className="container register ">
       <div className="row text-center justify-content-center align-items-center">
         <div className="col-md-6 ">
-        
-            <div className="d-flex align-items-center gap-5">
-              <Link to="/homepage/account"><i className=" fa-solid fa-arrow-left" style={{color:"var(--text)" ,fontSize:"1.5em"}}></i></Link>
-              {/* <h6 >Update Data</h6> */}
+
+          <div className="d-flex align-items-center gap-5">
+            <Link to="/homepage/account"><i className=" fa-solid fa-arrow-left" style={{ color: "var(--text)", fontSize: "1.5em" }}></i></Link>
+            {/* <h6 >Update Data</h6> */}
+          </div>
+          <form onSubmit={submitRegister}>
+            <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} >
+              <div className="user-photo">
+                <i className="fa-solid fa-pen"></i>
+                {
+                  localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ? < img src={img1} className='logo-account1 rounded-circle' /> : <img src={localStorage.getItem("imgCover")} className='logo-account1 rounded-circle' />
+                }
+              </div>
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
+            </label>
+            <div className="d-flex mt-3">
+              <input type="text" placeholder={`${localStorage.getItem("FirstName")}`} className="firstName" name='firstname' onChange={getUserData} />
+              <input type="text" placeholder={`${localStorage.getItem("LastName")}`} className="lastName" name='lastname' onChange={getUserData} />
             </div>
-            <form onSubmit={submitRegister}>
-              <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} >
-                <div className="user-photo">
-                  <i className="fa-solid fa-pen"></i>
-                  {
-                    localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ? < img src={img1} className='logo-account1 rounded-circle' /> : <img src={localStorage.getItem("imgCover")} className='logo-account1 rounded-circle' />
-                  }
-                </div>
-                <input
-                  type="file"
-                  id="fileInput"
-                  accept="image/*"
-                  style={{ display: "none" }}
-                  onChange={handleFileChange}
-                />
-              </label>
-              <div className="d-flex mt-3">
-                <input type="text" placeholder={`${userData?.firstname}`} className="firstName" name='firstname' onChange={getUserData} />
-                <input type="text" placeholder={`${userData?.lastname}`} className="lastName" name='lastname' onChange={getUserData} />
-              </div>
+            <div className="text-danger">
+              {errorList.map((error, i) => {
+                if (error.context.label === "firstname") {
+                  return (
+                    <p key={i} className="text-danger text-capitalize ms-2">
+                      firstname is not allowed to be empty
+                    </p>
+                  );
+                }
+              })}
+            </div>
+            <div className="text-danger">
+              {errorList.map((error, i) => {
+                if (error.context.label === "lastname") {
+                  return (
+                    <p key={i} className="text-danger text-capitalize ms-2">
+                      lastname is not allowed to be empty
+                    </p>
+                  );
+                }
+              })}
+            </div>
+            <div className="input d-flex gap-2 p-2">
+              <input type="date" placeholder={`${localStorage.getItem("Date")}`} className="input-signup" name='birthday' onChange={getUserData} />
               <div className="text-danger">
                 {errorList.map((error, i) => {
-                  if (error.context.label === "firstname") {
-                    return (
-                      <p key={i} className="text-danger text-capitalize ms-2">
-                        firstname is not allowed to be empty
-                      </p>
-                    );
-                  }
-                })}
-              </div>
-              <div className="text-danger">
-                {errorList.map((error, i) => {
-                  if (error.context.label === "lastname") {
-                    return (
-                      <p key={i} className="text-danger text-capitalize ms-2">
-                        lastname is not allowed to be empty
-                      </p>
-                    );
-                  }
-                })}
-              </div>
-              <div className="input d-flex gap-2 p-2">
-                <input type="date" placeholder={`${localStorage.getItem("Date")}`} className="input-signup" name='birthday' onChange={getUserData} />
-                <div className="text-danger">
-                  {errorList.map((error, i) => {
-                    if (error.context.label === "birthday") {
-                      return (
-                        <p key={i} className="text-danger text-capitalize">
-                          birthday is not allowed to be empty
-                        </p>
-                      );
-                    }
-                  })}
-                </div>
-                <input type="number" placeholder={`${localStorage.getItem("phone")}`} className="input-signup" name='phone' onChange={getUserData} />
-                {errorList.map((error, i) => {
-                  if (error.context.label === "phone") {
+                  if (error.context.label === "birthday") {
                     return (
                       <p key={i} className="text-danger text-capitalize">
-                        Phone Incorrect
+                        birthday is not allowed to be empty
                       </p>
                     );
                   }
                 })}
-                <select id="gender" className="input-signup curser-pointer" name='gender' onChange={getUserData}>
-                  <option value={`${localStorage.getItem("Gender")}`} className="male">{`${localStorage.getItem("Gender")}`}</option>
-                  <option value="male" className="male">Male</option>
-                  <option value="female" className="male">Female</option>
-                </select>
-                <div className="text-danger">
-                  {errorList.map((error, i) => {
-                    if (error.context.label === "gender") {
-                      return (
-                        <p key={i} className="text-danger text-capitalize">
-                          gender is not allowed to be empty
-                        </p>
-                      );
-                    }
-                  })}
-                </div>
-                <input type="email" placeholder={`${localStorage.getItem("Email")}`} className="input-signup" name='email' onChange={getUserData} />
-                <div className="text-danger">
+              </div>
+              <input type="number" placeholder={`${localStorage.getItem("phone")}`} className="input-signup" name='phone' onChange={getUserData} />
+              {errorList.map((error, i) => {
+                if (error.context.label === "phone") {
+                  return (
+                    <p key={i} className="text-danger text-capitalize">
+                      Phone Incorrect
+                    </p>
+                  );
+                }
+              })}
+              <select id="gender" className="input-signup curser-pointer" name='gender' onChange={getUserData}>
+                <option value={`${localStorage.getItem("Gender")}`} className="male">{`${localStorage.getItem("Gender")}`}</option>
+                <option value="male" className="male">Male</option>
+                <option value="female" className="male">Female</option>
+              </select>
+              <div className="text-danger">
+                {errorList.map((error, i) => {
+                  if (error.context.label === "gender") {
+                    return (
+                      <p key={i} className="text-danger text-capitalize">
+                        gender is not allowed to be empty
+                      </p>
+                    );
+                  }
+                })}
+              </div>
+              <input type="email" placeholder={`${localStorage.getItem("Email")}`} className="input-signup" name='email' onChange={getUserData} />
+              <div className="text-danger">
 
-                  {errorList.filter((item) => item.context.key == "email")[0]?.message}
-                </div>
-              
+                {errorList.filter((item) => item.context.key == "email")[0]?.message}
               </div>
-              <p className="text-center text-danger">
-                {error}
-              </p>
-              <div className="text-center">
-                <button type="submit" className=" btn-login btn-signUp">{loading ? <i className='fas fa-spinner fa-spin'></i> : 'Update'}</button>
-                
-              </div>
-            </form>
-        
+
+            </div>
+            <p className="text-center text-danger">
+              {error}
+            </p>
+            <div className="text-center">
+              <button type="submit" className=" btn-login btn-signUp">{loading ? <i className='fas fa-spinner fa-spin'></i> : 'Update'}</button>
+
+            </div>
+          </form>
+
         </div>
 
 
-        
 
 
 
 
 
-      
+
+
       </div>
 
     </div>

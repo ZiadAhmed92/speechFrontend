@@ -2,7 +2,7 @@
 import "./HomePage.css"
 import { useTranslation } from 'react-i18next';//1
 import { speechContext } from '../Context/Store.jsx';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Navigate, Outlet, useNavigate } from 'react-router-dom';
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -20,7 +20,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MuiAppBar from '@mui/material/AppBar';
-
+import user from "../../image/user.png"
+import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -72,12 +73,25 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function Homepage() {
     const { t, i18n } = useTranslation();//2
-
-    let { userData, logOut, photo } = React.useContext(speechContext);
+    const navigate = useNavigate();
+    let { handleAlert } = React.useContext(speechContext);
     const [mood, setMood] = React.useState("light")
     // const [mood, setMood] = useState(localStorage.getItem("mode"))
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+
+    function logOut() {
+        localStorage.removeItem('Token');
+        localStorage.removeItem("imgCover");
+        localStorage.removeItem("phone");
+        localStorage.removeItem("Gender");
+        localStorage.removeItem("Email");
+        localStorage.removeItem("Date");
+        localStorage.removeItem("FullName");
+        localStorage.removeItem("FirstName");
+        return navigate('/login');
+    }
+
 
     React.useEffect(() => {
         if (mood === "light") {
@@ -111,7 +125,7 @@ export default function Homepage() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed"  open={open}>
+            <AppBar position="fixed" open={open}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -122,9 +136,9 @@ export default function Homepage() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div" style={{ color: "var(--textHeader)" }} className='name_project'>
+                    {/* <Typography variant="h6" noWrap component="div" style={{ color: "var(--textHeader)" }} className='name_project'>
                         {t('Speech')}
-                    </Typography>
+                    </Typography> */}
                     <div className='ms-auto' >
                         <label className="theme-switch">
                             <input
@@ -185,6 +199,48 @@ export default function Homepage() {
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </DrawerHeader>
+                {
+                    localStorage.getItem("imgCover") == "https://speech-sapm.onrender.com/null" ?
+                        <Avatar
+                            sx={{
+                                mx: "auto",
+                                width: open ? 88 : 44,
+                                height: open ? 88 : 44,
+                                my: 1,
+                                border: "2px solid grey",
+                                transition: "0.25s",
+                            }}
+                            alt="img"
+                            src={user}
+                        /> : <Avatar
+                            sx={{
+                                mx: "auto",
+                                width: open ? 88 : 44,
+                                height: open ? 88 : 44,
+                                my: 1,
+                                border: "2px solid grey",
+                                transition: "0.25s",
+                            }}
+                            alt="img"
+                            src={localStorage.getItem("imgCover")}
+                        />
+                }
+                <Typography
+                    align="center"
+                    sx={{ fontSize: open ? 17 : 0, transition: "0.25s" }}
+                    className='text-capitalize'
+                    style={{ color: "var(--textHeader)" }}
+                >
+                    {localStorage.getItem("FullName")}
+                </Typography>
+                <Typography
+                    align="center"
+                    sx={{ transition: "0.25s" }}
+                    className='text-capitalize'
+                    style={{ color: "var(--textHeader)", fontSize: "15px" }}
+                >
+                    {localStorage.getItem("Email")}
+                </Typography>
                 <Divider />
                 <List>
                     {Array1.map((item) => (
@@ -214,25 +270,25 @@ export default function Homepage() {
                 <List className='logout'>
 
                     <ListItem disablePadding sx={{ display: "block" }}>
-                        <Link className="Link" to={`/login`}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? "initial" : "center",
-                                    px: 2.5,
 
-                                }}
-                            >
-                                <div className='icon-slider mx-1'><i className="fa-solid fa-right-from-bracket"></i></div>
-                                <ListItemText
-                                    onClick={() => { setOpen(false); logOut() }}
-                                    className='sidebar '
-                                    primary={t("Log Out")}
+                        <ListItemButton
+                            sx={{
+                                minHeight: 48,
+                                justifyContent: open ? "initial" : "center",
+                                px: 2.5,
 
-                                    sx={{ opacity: open ? 1 : 0 }}
-                                />
-                            </ListItemButton>
-                        </Link>
+                            }}
+                        >
+                            <div className='icon-slider mx-1'><i className="fa-solid fa-right-from-bracket"></i></div>
+                            <ListItemText
+                                onClick={() => { handleAlert(logOut) }}
+                                className='sidebar '
+                                primary={t("Log Out")}
+
+                                sx={{ opacity: open ? 1 : 0 }}
+                            />
+                        </ListItemButton>
+
                     </ListItem>
 
                 </List>
@@ -242,6 +298,6 @@ export default function Homepage() {
                 <Outlet />
 
             </Main>
-        </Box>
+        </Box >
     );
 }

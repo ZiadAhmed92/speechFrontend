@@ -52,7 +52,7 @@
     color: var(--text);
     font-weight: 800;
     text-align: center;
-    font-family: Inter;
+    font-family: "Protest Riot", sans-serif !important;
     letter-spacing: 1px;
 
 }
@@ -80,7 +80,7 @@
 .text-account {
     color: var(--text);
     text-align: center;
-    font-family: Inter;
+    font-family: "Protest Riot", sans-serif !important;
     font-size: 22px;
     font-style: normal;
     font-weight: 800;
