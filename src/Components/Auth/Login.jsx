@@ -37,7 +37,7 @@ const Login = () => {
                 localStorage.setItem("FullName", data.user.fullname);
                 localStorage.setItem("FirstName", data.user.firstname);
                 Navigate("/homepage");
-            } else {
+            } else { 
                 setLoading(false);
                 setError(data.message);
             }
