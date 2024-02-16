@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import img from "../../image/signIn.png"
 import { useNavigate } from "react-router-dom";
 import img1 from "../../image/user.png"
 import "./Auth.css";
@@ -307,7 +307,7 @@ const Register = () => {
 
                 </div>
                 <div className="col-md-6 img-parent ">
-                    <img src={img1} className="img-login " />
+                    <img src={img} className="img-login " />
                 </div>
             </div>
         </div>
