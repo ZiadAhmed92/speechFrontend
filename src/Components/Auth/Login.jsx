@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import signIn from "../../image/signIn2.png";
+import signIn from "../../image/signin.png";
 import "./Auth.css";
 import axios from "axios";
 import joi from "joi";
