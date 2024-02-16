@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import signIn from "../../image/signin.png";
+import signIn from "../../image/signIn2.png";
 import "./Auth.css";
 import axios from "axios";
 import joi from "joi";
@@ -37,7 +37,7 @@ const Login = () => {
                 localStorage.setItem("FullName", data.user.fullname);
                 localStorage.setItem("FirstName", data.user.firstname);
                 Navigate("/homepage");
-            } else { 
+            } else {
                 setLoading(false);
                 setError(data.message);
             }
