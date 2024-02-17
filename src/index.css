@@ -23,8 +23,7 @@ body {
   --subTitle: rgb(161 161 170);
   --header: #ffffff96;
   --textHeader: black;
-  --alert:#EEE
-
+  --alert: #EEE
 }
 
 .dark {
@@ -75,18 +74,23 @@ html {
 .fontfamily {
   font-family: "Protest Riot", sans-serif !important;
 }
+
 /* Alert */
-.swal2-popup{
-  background-color:var(--alert);
+.swal2-popup {
+  background-color: var(--alert);
   opacity: 5 !important;
   z-index: 100000 !important;
-  
+
 }
-.swal2-title,.swal2-confirm.swal2-styled{
+
+.swal2-title,
+.swal2-confirm.swal2-styled,
+.swal2-cancel.swal2-styled {
   font-family: "Protest Riot", sans-serif !important;
   color: var(--text);
 }
+
 /* sideBar M Ui */
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   z-index: 5 !important;
 }

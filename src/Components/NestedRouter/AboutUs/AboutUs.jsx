@@ -1,24 +1,25 @@
 import React from "react";
 import "./AboutUs.css";
 import female from './download.png'
-import male from './download (1).png'
 import ziad from '../../../image/circle-ziad.png'
 import saeed from '../../../image/saeed.jpg'
+import mashor from '../../../image/mashor.jpg'
+import tawfek from '../../../image/tawfek.jpg'
 import { useTranslation } from 'react-i18next';//1
 
 export default function AboutUs() {
   const { t, i18n } = useTranslation();//2
 
   let array = [
-    { img: saeed, name: t("Mohamed Saeed"), desc: t("Front-end Developer (React.JS)") },
     { img: ziad, name: t("Ziad Ahmed"), desc: t("Full-stack Developer (MERN)") },
+    { img: saeed, name: t("Mohamed Saeed"), desc: t("Front-end Developer (React.JS)") },
+    { img: mashor, name: t("Mohamed Ahmed"), desc: t("Back-end Developer (Node-js)") },
+    { img: tawfek, name: t("Mohamed Tawfeeq"), desc: t("Flutter Developer") },
+    { img: female, name: t("Somia Saad"), desc: t("Back-end Developer (Node-js)") },
     { img: female, name: t("Nourhan Gamal"), desc: t("ML Engineer") },
     { img: female, name: t("Nourhan Hassan"), desc: t("ML Engineer") },
-    { img: male, name: t("Mohamed Ahmed"), desc: t("Back-end Developer (Node-js)") },
-    { img: male, name: t("Somia Saad"), desc: t("Back-end Developer (Node-js)") },
     { img: female, name: t("Shahd Ahmed Bahgat"), desc: t("UI/UX Designer") },
     { img: female, name: t("Shahd Ahmed Allam"), desc: t("Document Writer") },
-    { img: male, name: t("Mohamed Tawfeeq"), desc: t("Flutter Developer") },
 
   ]
   return (
