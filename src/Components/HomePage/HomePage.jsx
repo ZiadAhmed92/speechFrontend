@@ -289,7 +289,7 @@ export default function Homepage() {
                         >
                             <div className='icon-slider mx-1'><i className="fa-solid fa-right-from-bracket"></i></div>
                             <ListItemText
-                                onClick={() => { handleAlert(logOut) }}
+                                onClick={() => { setOpen(false),handleAlert(logOut) }}
                                 className='sidebar '
                                 primary={t("Log Out")}
 
