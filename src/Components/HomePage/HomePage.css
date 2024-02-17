@@ -1,6 +1,6 @@
 .MuiToolbar-root.MuiToolbar-gutters,
 .MuiPaper-root.MuiPaper-elevation {
-    background:var(--header) !important
+    background: var(--header) !important
 }
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
@@ -8,11 +8,11 @@
 }
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
-    color: var(--text) 
+    color: var(--text)
 }
 
 .MuiTypography-root.MuiTypography-body1 {
-font-family: "Protest Riot", sans-serif !important;
+    font-family: "Protest Riot", sans-serif !important;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -22,21 +22,31 @@ font-family: "Protest Riot", sans-serif !important;
 .box {
     color: var(--text);
 }
-.icon-slider{
-   color: var(--textHeader) !important;
-   margin: 0 8px 0 0 !important;
-   font-size: 1.5em;
+
+.icon-slider {
+    color: var(--textHeader) !important;
+    margin: 0 8px 0 0 !important;
+    font-size: 1.5em;
 }
+
 .sidebar {
     color: var(--textHeader);
-font-family: "Protest Riot", sans-serif !important;
+    font-family: "Protest Riot", sans-serif !important;
 }
+
 @media only screen and (max-width: 600px) {
-.icon-slider {
+    .icon-slider {
         font-size: 1em;
     }
-    .name_project{
+
+    .name_project {
         font-size: 0.9em !important;
+    }
+
+    .MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.css-10hburv-MuiTypography-root,
+    .MuiTypography-root.MuiTypography-body1 {
+        font-weight: 100;
+        font-size: 1em;
     }
 }
 

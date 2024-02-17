@@ -244,7 +244,11 @@ export default function Homepage() {
                 <Divider />
                 <List>
                     {Array1.map((item) => (
-                        <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
+                        <ListItem key={item.text} disablePadding sx={{
+                            display: "block", "@media screen and (max-width: 768px)": {
+                                fontSize: "15px",
+                            }
+                        }}>
                             <Link className="Link" to={`${item.path}`}>
                                 <ListItemButton
                                     sx={{
@@ -259,7 +263,11 @@ export default function Homepage() {
                                         onClick={() => { setOpen(false) }}
                                         className='sidebar '
                                         primary={item.text}
-                                        sx={{ opacity: open ? 1 : 0 }}
+                                        sx={{
+                                            opacity: open ? 1 : 0
+                                        }}
+                                        disablePadding
+
                                     />
                                 </ListItemButton>
                             </Link>
