@@ -11,7 +11,7 @@ const Suggestion = () => {
   return (
     <form className='text-center d-flex flex-column align-items-center justify-content-center'>
       <h3 style={{ color: "var(--text)" }} className='suggest-text'>{t("Get In Touch")}</h3>
-      <textarea id="w3review" name="suggestion"placeholder={t("Message")} className='textarea'>
+      <textarea id="w3review" name="suggestion" placeholder={t("Message")} className='textarea '>
         
       </textarea>
       <div className=''>

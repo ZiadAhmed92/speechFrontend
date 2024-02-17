@@ -97,7 +97,7 @@ const UpdateUser = () => {
         .min(3)
         .max(8)
       ,
-      phone: Joi.string().regex(/^(002)?01[0125][0-9]{8}$/),
+      phone: Joi.string().regex(/^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/),
       birthday: Joi.string(),
       email: Joi.string()
         .email({ tlds: { allow: false } }),
@@ -133,7 +133,7 @@ const UpdateUser = () => {
         <div className="col-md-6 ">
 
 
-          <form onSubmit={submitRegister}>
+          <form onSubmit={submitRegister} className="form-update" >
 
             <label htmlFor="fileInput" style={{ cursor: "pointer", textAlign: "center" }} >
               <div className="user-photo">
@@ -152,15 +152,15 @@ const UpdateUser = () => {
               />
             </label>
             <div className="d-flex mt-3">
-              <input type="text" placeholder={`${localStorage.getItem("FirstName")}`} className="firstName" name='firstname' onChange={getUserData} />
-              <input type="text" placeholder={`${localStorage.getItem("LastName")}`} className="lastName" name='lastname' onChange={getUserData} />
+              <input type="text" placeholder={`${localStorage.getItem("FirstName")}`} className="firstName fontfamily" name='firstname' onChange={getUserData} />
+              <input type="text" placeholder={`${localStorage.getItem("LastName")}`} className="lastName fontfamily" name='lastname' onChange={getUserData} />
             </div>
             <div className="text-danger">
               {errorList.map((error, i) => {
                 if (error.context.label === "firstname") {
                   return (
-                    <p key={i} className="text-danger text-capitalize ms-2">
-                      firstname is not allowed to be empty
+                    <p key={i} className="text-danger fontfamily text-capitalize ms-2">
+                      FirstName is not allowed to be empty
                     </p>
                   );
                 }
@@ -170,37 +170,37 @@ const UpdateUser = () => {
               {errorList.map((error, i) => {
                 if (error.context.label === "lastname") {
                   return (
-                    <p key={i} className="text-danger text-capitalize ms-2">
-                      lastname is not allowed to be empty
+                    <p key={i} className="text-danger fontfamily text-capitalize ms-2">
+                      LastName is not allowed to be empty
                     </p>
                   );
                 }
               })}
             </div>
             <div className="input d-flex gap-2 p-2">
-              <input type="date" placeholder={`${localStorage.getItem("Date")}`} className="input-signup" name='birthday' onChange={getUserData} />
+              <input type="date" placeholder={`${localStorage.getItem("Date")}`} className="input-signup fontfamily" name='birthday' onChange={getUserData} />
               <div className="text-danger">
                 {errorList.map((error, i) => {
                   if (error.context.label === "birthday") {
                     return (
-                      <p key={i} className="text-danger text-capitalize">
+                      <p key={i} className="text-danger fontfamily text-capitalize">
                         birthday is not allowed to be empty
                       </p>
                     );
                   }
                 })}
               </div>
-              <input type="number" placeholder={`${localStorage.getItem("phone")}`} className="input-signup" name='phone' onChange={getUserData} />
+              <input type="number" placeholder={`${localStorage.getItem("phone")}`} className="input-signup fontfamily" name='phone' onChange={getUserData} />
               {errorList.map((error, i) => {
                 if (error.context.label === "phone") {
                   return (
-                    <p key={i} className="text-danger text-capitalize">
+                    <p key={i} className="text-danger fontfamily text-capitalize">
                       Phone Incorrect
                     </p>
                   );
                 }
               })}
-              <select id="gender" className="input-signup curser-pointer" name='gender' onChange={getUserData}>
+              <select id="gender" className="input-signup curser-pointer fontfamily" name='gender' onChange={getUserData}>
                 <option value={`${localStorage.getItem("Gender")}`} className="male">{`${localStorage.getItem("Gender")}`}</option>
                 <option value="male" className="male">Male</option>
                 <option value="female" className="male">Female</option>
@@ -209,25 +209,25 @@ const UpdateUser = () => {
                 {errorList.map((error, i) => {
                   if (error.context.label === "gender") {
                     return (
-                      <p key={i} className="text-danger text-capitalize">
+                      <p key={i} className="text-danger fontfamily text-capitalize">
                         gender is not allowed to be empty
                       </p>
                     );
                   }
                 })}
               </div>
-              <input type="email" placeholder={`${localStorage.getItem("Email")}`} className="input-signup" name='email' onChange={getUserData} />
-              <div className="text-danger">
+              <input type="email" placeholder={`${localStorage.getItem("Email")}`} className="input-signup fontfamily" name='email' onChange={getUserData} />
+              <div className="text-danger fontfamily">
 
                 {errorList.filter((item) => item.context.key == "email")[0]?.message}
               </div>
 
             </div>
-            <p className="text-center text-danger">
+            <p className="text-center text-danger fontfamily">
               {error}
             </p>
             <div className="text-center">
-              <button type="submit" className=" btn-login btn-signUp">{loading ? <i className='fas fa-spinner fa-spin'></i> : 'Update'}</button>
+              <button type="submit" className=" btn-login btn-signUp fontfamily">{loading ? <i className='fas fa-spinner fa-spin'></i> : 'Update'}</button>
 
             </div>
           </form>

@@ -115,7 +115,7 @@ export default function Homepage() {
         { text: t("Account"), icon: { icon: <i className="fa-regular fa-circle-user"></i> }, path: "account" },
         { text: t("History"), icon: { icon: <i className="fa-solid fa-clock-rotate-left"></i> }, path: "history" },
         { text: t("Suggestion"), icon: { icon: <i className="fa-solid fa-pen-nib"></i> }, path: "suggestion" },
-        { text: t("Change Password"), icon: { icon: <i className="fa-solid fa-unlock"></i> }, path: "/forgetpasswordsecond" },
+        { text: t("Change Password"), icon: { icon: <i className="fa-solid fa-unlock"></i> }, path: "forgetpasswordsecond" },
         { text: t("Change Language"), icon: { icon: <i className="fa-solid fa-language"></i> }, path: "language" },
         { text: t("About Us"), icon: { icon: <i className="fa-solid fa-people-group"></i> }, path: "aboutus" },
 

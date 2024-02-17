@@ -56,17 +56,20 @@ const Register = () => {
     }
 
     async function sendUserData() {
-        console.log(formData);
-        let { data } = await axios.post(
-            `https://speech-sapm.onrender.com/users/signup`,
-            formData
-        );
-        console.log(data);
-        if (data.message === "success") {
-            Navigate("/resetSendEmail");
-        } else {
+        try {
+            let { data } = await axios.post(
+                `https://speech-sapm.onrender.com/users/signup`,
+                formData
+            );
+            if (data.message === "success") {
+                Navigate("/resetSendEmail");
+            } else {
+                setLoading(false);
+                setError(data.errors.email.message);
+            }
+        } catch (error) {
+            setError(error.response.data.message)
             setLoading(false);
-            setError(data.errors.email.message);
         }
     }
     function validateRegisterForm() {
@@ -75,7 +78,7 @@ const Register = () => {
             lastname: Joi.string().min(3).max(30).required(),
             gender: Joi.string().min(3).max(8).required(),
             phone: Joi.string()
-                .regex(/^(002)?01[0125][0-9]{8}$/)
+                .regex(/^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/)
                 .required(),
             birthday: Joi.string().required(),
             email: Joi.string().email({ tlds: { allow: false } }),
@@ -137,14 +140,14 @@ const Register = () => {
                                 <input
                                     type="text"
                                     placeholder="First Name "
-                                    className="firstName"
+                                    className="firstName fontfamily"
                                     name="firstname"
                                     onChange={getUserData}
                                 />
                                 <input
                                     type="text"
                                     placeholder="Last Name "
-                                    className="lastName"
+                                    className="lastName fontfamily"
                                     name="lastname"
                                     onChange={getUserData}
                                 />
@@ -153,7 +156,7 @@ const Register = () => {
                                 {errorList.map((error, i) => {
                                     if (error.context.label === "firstname") {
                                         return (
-                                            <p key={i} className="text-danger text-capitalize ms-2">
+                                            <p key={i} className="text-danger fontfamily text-capitalize ms-2">
                                                 firstname is not allowed to be empty
                                             </p>
                                         );
@@ -164,7 +167,7 @@ const Register = () => {
                                 {errorList.map((error, i) => {
                                     if (error.context.label === "lastname") {
                                         return (
-                                            <p key={i} className="text-danger text-capitalize ms-2">
+                                            <p key={i} className="text-danger fontfamily text-capitalize ms-2">
                                                 lastname is not allowed to be empty
                                             </p>
                                         );
@@ -175,7 +178,7 @@ const Register = () => {
                                 <input
                                     type="date"
                                     placeholder="Birthday "
-                                    className="input-signup"
+                                    className="input-signup fontfamily"
                                     name="birthday"
                                     onChange={getUserData}
                                 />
@@ -183,7 +186,7 @@ const Register = () => {
                                     {errorList.map((error, i) => {
                                         if (error.context.label === "birthday") {
                                             return (
-                                                <p key={i} className="text-danger text-capitalize">
+                                                <p key={i} className="text-danger fontfamily text-capitalize">
                                                     birthday is not allowed to be empty
                                                 </p>
                                             );
@@ -193,14 +196,14 @@ const Register = () => {
                                 <input
                                     type="number"
                                     placeholder="Phone Number "
-                                    className="input-signup"
+                                    className="input-signup fontfamily"
                                     name="phone"
                                     onChange={getUserData}
                                 />
                                 {errorList.map((error, i) => {
                                     if (error.context.label === "phone") {
                                         return (
-                                            <p key={i} className="text-danger text-capitalize">
+                                            <p key={i} className="text-danger fontfamily text-capitalize">
                                                 Phone Incorrect
                                             </p>
                                         );
@@ -208,17 +211,17 @@ const Register = () => {
                                 })}
                                 <select
                                     id="gender"
-                                    className="input-signup curser-pointer"
+                                    className="input-signup curser-pointer fontfamily"
                                     name="gender"
                                     onChange={getUserData}
                                 >
-                                    <option value="male" className="male">
+                                    <option value="male" className="male fontfamily">
                                         gender
                                     </option>
-                                    <option value="male" className="male">
+                                    <option value="male" className="male fontfamily">
                                         Male
                                     </option>
-                                    <option value="female" className="male">
+                                    <option value="female" className="male fontfamily">
                                         Female
                                     </option>
                                 </select>
@@ -226,7 +229,7 @@ const Register = () => {
                                     {errorList.map((error, i) => {
                                         if (error.context.label === "gender") {
                                             return (
-                                                <p key={i} className="text-danger text-capitalize">
+                                                <p key={i} className="text-danger text-capitalize fontfamily">
                                                     gender is not allowed to be empty
                                                 </p>
                                             );
@@ -236,11 +239,11 @@ const Register = () => {
                                 <input
                                     type="email"
                                     placeholder="Email "
-                                    className="input-signup"
+                                    className="input-signup fontfamily"
                                     name="email"
                                     onChange={getUserData}
                                 />
-                                <div className="text-danger">
+                                <div className="text-danger fontfamily">
                                     {
                                         errorList.filter((item) => item.context.key == "email")[0]
                                             ?.message
@@ -250,7 +253,7 @@ const Register = () => {
                                     <input
                                         type={`${type}`}
                                         placeholder="Password "
-                                        className="input-signup"
+                                        className="input-signup fontfamily"
                                         name="password"
                                         onChange={getUserData}
                                     />
@@ -258,7 +261,7 @@ const Register = () => {
                                         {errorList.map((error, i) => {
                                             if (error.context.label === "password") {
                                                 return (
-                                                    <p key={i} className="text-danger text-capitalize">
+                                                    <p key={i} className="text-danger fontfamily text-capitalize">
                                                         The password is weak and must not be less than five
                                                         numbers
                                                     </p>
@@ -281,9 +284,9 @@ const Register = () => {
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-center text-danger">{error}</p>
+                            <p className="text-center text-danger fontfamily">{error}</p>
                             <div className="text-center">
-                                <button type="submit" className=" btn-login btn-signUp">
+                                <button type="submit" className=" btn-login btn-signUp fontfamily">
                                     {loading ? (
                                         <i className="fas fa-spinner fa-spin"></i>
                                     ) : (
@@ -291,10 +294,10 @@ const Register = () => {
                                     )}
                                 </button>
                                 <Link to="/login">
-                                    <h6 className="text-signup">
+                                    <h6 className="text-signup fontfamily">
                                         Already have an account? <br />
                                         <span
-                                            className="sub-title fs-5"
+                                            className="sub-title fs-5 fontfamily"
                                             style={{ color: "#dc0b62" }}
                                         >
                                             Login

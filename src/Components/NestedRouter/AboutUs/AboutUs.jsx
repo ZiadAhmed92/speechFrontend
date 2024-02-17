@@ -17,14 +17,14 @@ export default function AboutUs() {
     { img: male, name: t("Mohamed Ahmed"), desc: t("Back-end Developer (Node-js)") },
     { img: male, name: t("Somia Saad"), desc: t("Back-end Developer (Node-js)") },
     { img: female, name: t("Shahd Ahmed Bahgat"), desc: t("UI/UX Designer") },
-    { img: female, name: t("Shahd Ahmed Allam"), desc: t("Documentation Writer") },
+    { img: female, name: t("Shahd Ahmed Allam"), desc: t("Document Writer") },
     { img: male, name: t("Mohamed Tawfeeq"), desc: t("Flutter Developer") },
 
   ]
   return (
     <>
       <p className="text-center tex2" style={{ color: "var(--text)" }}>{t("Our Creative Team")}</p>
-      <div className="container">
+      <div className="container about-container">
         <div className="row justify-content-center">
           {
             array.map(({ img, name, desc }, i) => {

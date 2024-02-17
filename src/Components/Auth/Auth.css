@@ -18,10 +18,14 @@
 
 }
 
-::placeholder,
+/* ::placeholder {
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.635) !important;
+} */
+.input-signup,
 .male {
     font-size: 1.2em;
-    color: rgba(0, 0, 0, 0.635);
+    color: rgba(0, 0, 0, 0.536) !important;
 }
 
 .input {
@@ -67,7 +71,7 @@
 .btn-login {
     color: #FFF;
     text-align: center;
-font-family: "Protest Riot", sans-serif !important;
+    font-family: "Protest Riot", sans-serif !important;
     border: none;
     font-size: 20px;
     width: 150px;
@@ -138,12 +142,18 @@ font-family: "Protest Riot", sans-serif !important;
     .img-parent {
         text-align: center;
     }
+
+    .input-signup,
+    .male {
+        font-size: 1.2em;
+        color: rgba(0, 0, 0, 0.536) !important;
+    }
 }
 
 /* Register */
 .register {
     height: 100vh;
-    
+
 
 }
 

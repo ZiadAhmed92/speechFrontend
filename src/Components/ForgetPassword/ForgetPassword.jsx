@@ -46,7 +46,7 @@ export const ForgetPassword = () => {
                     <Link to="/login"><i className=" fa-solid fa-arrow-left" style={{ color: "var(--text)", fontSize: "1.5em" }}></i></Link>
 
                     <div className="col-md-6 forget-parent ">
-                        <div className="text-forget-pass text-capitalize mt-4 ">
+                        <div className="text-forget-pass text-capitalize mt-4 fontfamily">
                             <span className="sub-title sub-title-forget "> Forgot Your Password ?</span>
                             <br /> Enter Your Registed Email
                             <br /> Below To Recieve Password Reset
@@ -63,11 +63,11 @@ export const ForgetPassword = () => {
                             </div>
                             <input
                                 type="email"
-                                className="input-forget"
+                                className="input-forget fontfamily"
                                 placeholder="Enter Email"
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <button className="btn-forget bt-forget" type="submit">
+                            <button className="btn-forget bt-forget fontfamily" type="submit">
                                 {loading ? (
                                     <i className="fas fa-spinner fa-spin"></i>
                                 ) : (

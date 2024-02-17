@@ -1,15 +1,38 @@
-.tex2{
-  font-size:50px;
+.tex2 {
+  font-size: 50px;
 
 }
-.card-text,.card-title,.tex2{
-    font-family: "Protest Riot", sans-serif !important;
+
+.card-text,
+.card-title,
+.tex2 {
+  font-family: "Protest Riot", sans-serif !important;
 }
+
+.about-container {
+  background: var(--header);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 6px;
+}
+
 @media only screen and (max-width: 600px) {
   .aboutUS {
-  width: 125px !important;
+    width: 110px !important;
   }
-    .tex2 {
-      font-size: 25px;
-    }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .card-text {
+    font-size: 0.9em;
+  }
+
+  .tex2 {
+    font-size: 25px;
+  }
 }

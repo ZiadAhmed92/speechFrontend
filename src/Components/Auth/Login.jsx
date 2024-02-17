@@ -36,6 +36,7 @@ const Login = () => {
                 localStorage.setItem("Date", data.user.birthday);
                 localStorage.setItem("FullName", data.user.fullname);
                 localStorage.setItem("FirstName", data.user.firstname);
+                localStorage.setItem("LastName", data.user.lastname);
                 Navigate("/homepage");
             } else {
                 setLoading(false);
@@ -77,8 +78,8 @@ const Login = () => {
             <div className="row  align-items-center row-login">
                 <div className="col-md-6 p-3">
                     <div>
-                        <h3 className="sub-title login">Welcome Back</h3>
-                        <p className="text-center">Login To Your Account</p>
+                        <h3 className="sub-title login ">Welcome Back</h3>
+                        <p className="text-center fontfamily">Login To Your Account</p>
                         <form onSubmit={submitLogin}>
                             <div className="text-danger text-center">
                                 {
@@ -90,7 +91,7 @@ const Login = () => {
                                 <input
                                     type="email"
                                     placeholder="Email "
-                                    className="email"
+                                    className="email fontfamily"
                                     name="email"
                                     onChange={getUserData}
                                 />
@@ -98,7 +99,7 @@ const Login = () => {
                                 <input
                                     type={`${type}`}
                                     placeholder="Password "
-                                    className="password"
+                                    className="password fontfamily"
                                     name="password"
                                     onChange={getUserData}
                                 />
@@ -128,13 +129,7 @@ const Login = () => {
                                     )}
                                 </div>
                             </div>
-                            <Link to="/forgetpassword">
-                                {" "}
-                                <h6 className="sub-title ms-4 py-3 fs-4 ForgetPassword text-center"
-                                    style={{ color: "#dc0b62" }}>
-                                    Forgot Password ?
-                                </h6>
-                            </Link>
+
                             <div className="text-center">
                                 <button className="btn-login">
                                     {loading ? (
@@ -143,6 +138,13 @@ const Login = () => {
                                         "Sign In"
                                     )}
                                 </button>
+                                <Link to="/forgetpassword">
+                                    {" "}
+                                    <h6 className="sub-title ms-4 py-3 fs-4 ForgetPassword text-center"
+                                        style={{ color: "#dc0b62" }}>
+                                        Forgot Password ?
+                                    </h6>
+                                </Link>
                                 <h6 className="text-login my-3">Don’t have an account? </h6>
                                 <Link to="/register">
                                     {" "}

@@ -58,6 +58,10 @@ function App() {
           element: <Newrecord />,
         },
         {
+          path: "forgetpasswordsecond",
+          element: <ForgetPasswordSecond />,
+        },
+        {
           path: "aboutus",
           element: <AboutUs />,
         },
@@ -130,10 +134,6 @@ function App() {
     {
       path: "/forgetpassword",
       element: <ForgetPassword />,
-    },
-    {
-      path: "/forgetpasswordsecond",
-      element: <ForgetPasswordSecond />,
     },
     {
       path: "/login",
