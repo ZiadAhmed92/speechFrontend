@@ -129,7 +129,7 @@ const Register = () => {
                                     onChange={handleFileChange}
                                 />
                             </label>
-                            <h4 className="text-signUp">
+                            <h4 className="text-signUp" style={{ color: "var(--text)" }}>
                                 Hi!
                                 <br /> Create an account.
                             </h4>

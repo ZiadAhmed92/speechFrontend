@@ -78,8 +78,8 @@ const Login = () => {
             <div className="row  align-items-center row-login">
                 <div className="col-md-6 p-3">
                     <div>
-                        <h3 className="sub-title login ">Welcome Back</h3>
-                        <p className="text-center fontfamily">Login To Your Account</p>
+                        <h3 className="sub-title login " style={{ color: "var(--text)" }}>Welcome Back</h3>
+                        <p className="text-center fontfamily" style={{ color: "var(--text)" }}>Login To Your Account</p>
                         <form onSubmit={submitLogin}>
                             <div className="text-danger text-center">
                                 {
