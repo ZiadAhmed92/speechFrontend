@@ -96,3 +96,7 @@ html {
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   z-index: 5 !important;
 }
+
+.fa-solid.fa-pen {
+  border: 1px solid var(--text);
+}
