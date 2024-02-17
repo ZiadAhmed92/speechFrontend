@@ -75,8 +75,8 @@ export default function Homepage() {
     const { t, i18n } = useTranslation();//2
     const navigate = useNavigate();
     let { handleAlert } = React.useContext(speechContext);
-    const [mood, setMood] = React.useState("light")
-    // const [mood, setMood] = useState(localStorage.getItem("mode"))
+    // const [mood, setMood] = React.useState("light")
+    const [mood, setMood] = React.useState(localStorage.getItem("mode") ? localStorage.getItem("mode") : "light")
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -289,7 +289,7 @@ export default function Homepage() {
                         >
                             <div className='icon-slider mx-1'><i className="fa-solid fa-right-from-bracket"></i></div>
                             <ListItemText
-                                onClick={() => { setOpen(false),handleAlert(logOut) }}
+                                onClick={() => { setOpen(false), handleAlert(logOut) }}
                                 className='sidebar '
                                 primary={t("Log Out")}
 

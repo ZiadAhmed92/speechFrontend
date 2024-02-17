@@ -19,9 +19,26 @@
   padding: 6px;
 }
 
+.card-img-top {
+  border: 3px solid #D05F8E;
+
+}
+
+.img-aboutUs {
+  width: 20%;
+}
+
+.card-text {
+  font-size: 0.9em;
+}
+
 @media only screen and (max-width: 600px) {
   .aboutUS {
     width: 110px !important;
+  }
+
+  .img-aboutUs {
+    width: 50%;
   }
 
   .card-title {
@@ -29,7 +46,7 @@
   }
 
   .card-text {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 
   .tex2 {

@@ -21,6 +21,7 @@ body {
   --secondary: black;
   --title: black;
   --subTitle: rgb(161 161 170);
+  --subTitle2: rgba(3, 3, 4, 0.729);
   --header: #ffffff96;
   --textHeader: black;
   --alert: #EEE
@@ -35,6 +36,7 @@ body {
   --secondary: black;
   --title: ;
   --subTitle: rgb(161 161 170);
+  --subTitle2: rgba(242, 242, 245, 0.729);
   --header: rgba(44, 42, 42, 0.687);
   --alert: rgba(44, 42, 42, 1)
 }
